@@ -7,6 +7,7 @@ target 'FabBook' do
 
   # Pods for FabBook
   pod 'RxSwift'
+  pod 'JGProgressHUD'
 
   target 'FabBookTests' do
     inherit! :search_paths

@@ -1,0 +1,36 @@
+/* 
+  projectInfo.json
+  FabBook
+
+  Created by anthony on 2021/12/08.
+  
+*/
+{
+    "projectCode": "20211208014926",
+    "countryCompanyCode": "KOR0031",
+    "projectName": null,
+    "productCode": "00800600130001",
+    "finishStatus": "Y",
+    "templateCode": "045021028571",
+    "imageYear": "2021",
+    "imageSequence": "0172091561",
+    "affxName": "null simple_book",
+    "xmlPath": "/Upload/Cart15/KOR0031/2021/Q4/20211208/20211208014926/",
+    "albumType": "P",
+    "deleteYN": "N",
+    "userNo": 38441603,
+    "registrationDate": "2021-12-08T14:28:08",
+    "lastUpdate": "2021-12-08T16:49:52",
+    "editUserNo": null,
+    "appType": null,
+    "osType": "190001",
+    "paperCode": "160001",
+    "glossyType": "M",
+    "usePhotoCount": 22,
+    "frameCode": null,
+    "appVersion": "2.6.33.01",
+    "backCode": null,
+    "colorCode": null,
+    "designCnt": null,
+    "quantity": 1
+}
