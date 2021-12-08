@@ -1,0 +1,6 @@
+framework module Pods_FabBookTests {
+  umbrella header "Pods-FabBookTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'FabBook' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for FabBook
+  pod 'RxSwift'
+
+  target 'FabBookTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'FabBookUITests' do
+    # Pods for testing
+  end
+
+end
