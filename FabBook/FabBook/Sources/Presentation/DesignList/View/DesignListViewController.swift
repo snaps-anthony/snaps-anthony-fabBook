@@ -116,9 +116,13 @@ class DesignListViewController: BaseViewController {
                 ProductGenerator.shared.policy = policy
                 ProductGenerator.shared.templateCode = model.templateCode
                 
-                //execute PhotoPicker
-                 let photoPicker = AssetsTrayViewController()
-                self?.navigationController?.pushViewController(photoPicker, animated: true)
+                //execute PhotoPicker                
+                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                if  storyBoard != nil {
+                    print("debug : find storyboard")
+                    let vc = storyBoard.instantiateViewController(withIdentifier: "AssetsTrayViewController")
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                }
             }.disposed(by: self.disposeBag)
     }
     
