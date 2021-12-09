@@ -1,12 +1,3 @@
-/* 
-  design.json
-  FabBook
-
-  Created by anthony on 2021/12/08.
-https://ios-development.tistory.com/507
-  
-  FabBook 디자인화면에서 필요한 데이터
-*/
 [
     {
         "thumbnailImageUrl": null,
@@ -39,22 +30,6 @@ https://ios-development.tistory.com/507
         "version": null,
         "outerYn": null,
         "jsonContents": "{\"@printCount\":0,\"@layoutType\":\"\",\"@width\":818,\"@height\":405,\"@templateCode\":\"045020072007\",\"defaultInfo\":{\"@templateCode\":\"045020072007\",\"@layoutCode\":\"\",\"@backgroundId\":\"marvin_rsrc_bg_83\",\"@stickerIdList\":[\"guest1_soy_cp_111\"]},\"@hiddenIdx\":0,\"@layoutCode\":\"\",\"@side\":\"\",\"@subType\":\"spread\",\"@type\":\"cover\",\"@midWidth\":0,\"object\":[{\"@fillColor\":\"\",\"@readOnly\":false,\"@whitePrint\":false,\"@width\":942,\"@height\":462,\"@resourceType\":\"\",\"@resourceId\":\"marvin_rsrc_bg_83\",\"@middleImagePath\":\"/Upload/Data1/Resource/rsrc_background/edit/marvin_rsrc_bg_83.jpg\",\"@name\":\"\",\"@textileColor\":\"#ff00ff\",\"@isBigFile\":false,\"@angle\":0,\"@fixedSize\":false,\"@x\":-62,\"@y\":-28,\"@overPrint\":false,\"@subType\":\"image\",\"@type\":\"background\",\"@source\":\"template\",\"@imageSequence\":\"\",\"@alpha\":1,\"@bgColor\":\"\"},{\"@fillColor\":\"\",\"@readOnly\":false,\"@whitePrint\":false,\"@width\":200,\"@height\":136,\"@resourceId\":\"guest1_soy_cp_111\",\"@middleImagePath\":\"/Upload/Data1/Resource/clipart/edit/guest1_soy_cp_111.png\",\"@name\":\"\",\"@textileColor\":\"#ff00ff\",\"original\":{\"@width\":0,\"@height\":0},\"@isBigFile\":false,\"@angle\":0,\"@fixedSize\":false,\"@x\":514,\"@y\":51,\"@overPrint\":false,\"@subType\":\"\",\"@type\":\"sticker\",\"@source\":\"template\",\"@imageSequence\":\"\",\"@alpha\":1},{\"@fillColor\":\"\",\"@readOnly\":false,\"@whitePrint\":false,\"@width\":383,\"@height\":15,\"@name\":\"\",\"@textileColor\":\"#ff00ff\",\"@defaultText\":null,\"@defaultStyle\":\"font-family:'스냅스 윤고딕700';line-height:100%;font-size:12px;color:#000000;text-align:left;font-style:none;text-decoration:none;\",\"@isBigFile\":false,\"@angle\":90,\"@placeholder\":null,\"@wordWrap\":false,\"@fixedSize\":true,\"@rowCount\":0,\"@x\":217,\"@y\":195,\"@overPrint\":false,\"@subType\":\"spine\",\"@type\":\"text\",\"@source\":\"template\",\"@lineHeight\":83,\"@alpha\":1,\"_\":null}]}"
-    },
-    {
-        "thumbnailImageUrl": null,
-        "middleSizeImageUrl": null,
-        "templateId": "bison_PB_SQ_239_1",
-        "templateCode": "045020072076",
-        "xmlPath": null,
-        "searchTags": null,
-        "maskCount": null,
-        "displayType": null,
-        "displayName": null,
-        "displayNumber": null,
-        "registrationDate": null,
-        "version": null,
-        "outerYn": null,
-        "jsonContents": "{\"@printCount\":0,\"@layoutType\":\"\",\"@width\":818,\"@height\":405,\"@templateCode\":\"045020072076\",\"defaultInfo\":{\"@templateCode\":\"045020072076\",\"@layoutCode\":\"\",\"@backgroundId\":\"\",\"@stickerIdList\":[]},\"@hiddenIdx\":0,\"@layoutCode\":\"\",\"@side\":\"\",\"@subType\":\"spread\",\"@type\":\"cover\",\"@midWidth\":0,\"object\":[{\"@fillColor\":\"\",\"@readOnly\":false,\"@whitePrint\":false,\"@width\":942,\"@height\":462,\"@resourceType\":\"\",\"@resourceId\":\"\",\"@middleImagePath\":\"\",\"@name\":\"\",\"@textileColor\":\"#ff00ff\",\"@isBigFile\":false,\"@angle\":0,\"@fixedSize\":false,\"@x\":-62,\"@y\":-28,\"@overPrint\":false,\"@subType\":\"color\",\"@type\":\"background\",\"@source\":\"template\",\"@imageSequence\":\"\",\"@alpha\":1,\"@bgColor\":\"#ffffff\"},{\"@fillColor\":\"\",\"@readOnly\":false,\"@whitePrint\":false,\"@width\":383,\"@height\":15,\"@name\":\"\",\"@textileColor\":\"#ff00ff\",\"@defaultText\":null,\"@defaultStyle\":\"font-family:'스냅스 윤고딕700';line-height:100%;font-size:12px;color:#000000;text-align:left;font-style:none;text-decoration:none;\",\"@isBigFile\":false,\"@angle\":90,\"@placeholder\":null,\"@wordWrap\":false,\"@fixedSize\":true,\"@rowCount\":0,\"@x\":217,\"@y\":195,\"@overPrint\":false,\"@subType\":\"spine\",\"@type\":\"text\",\"@source\":\"template\",\"@lineHeight\":83,\"@alpha\":1,\"_\":null}]}"
     },
     {
         "thumbnailImageUrl": null,

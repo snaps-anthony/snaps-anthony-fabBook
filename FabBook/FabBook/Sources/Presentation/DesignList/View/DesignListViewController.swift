@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class DesignListViewController: BaseViewController {
     
@@ -13,11 +15,30 @@ class DesignListViewController: BaseViewController {
     var titleLabel : UILabel = {
         var lbl = UILabel()
         lbl.text = "디자인"
-        lbl.font = .boldSystemFont(ofSize: 18)
+        lbl.font = .boldSystemFont(ofSize: 20)
+        lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
-    var cartBtn : UIButton?
-    var menuBtn : UIButton?
+    var cartBtn : UIButton = {
+        var btn = UIButton()
+        btn.setTitle("장바구니", for: .normal)
+        btn.titleLabel?.font = .systemFont(ofSize: 15)
+        btn.backgroundColor = .black
+        btn.setTitleColor(.white, for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(didClickCartBtn), for: .touchUpInside)
+        return btn
+    }()
+    var menuBtn : UIButton = {
+        var btn = UIButton()
+        btn.setTitle("메뉴", for: .normal)
+        btn.titleLabel?.font = .systemFont(ofSize: 15)
+        btn.backgroundColor = .black
+        btn.setTitleColor(.white, for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(didClickMenuBtn), for: .touchUpInside)
+        return btn
+    }()
     var collectionView : UICollectionView!
     
     
@@ -27,38 +48,80 @@ class DesignListViewController: BaseViewController {
     //MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
+        setupCollectionView()
+        configureUI()
         bind()
-        viewModel.getDesigList()
+        viewModel.fetchDesigList()
     }
     
     //MARK: methods
-    private func setup(){
-        
-        // titleLabel
-        
-        
-        
-        
-        // collectionView
+    
+    private func setupCollectionView(){
+        //layout
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 0, right: 20)
-        layout.minimumLineSpacing = 10
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.minimumLineSpacing = 20
         layout.minimumInteritemSpacing = 20
-        let width = (view.frame.width / 2) - 60
+        let width = (view.frame.width - 60 ) / 2
         layout.itemSize = CGSize(width: width, height: 200)
+        // collectionview
         collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .yellow
         collectionView.bounces = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(DesignCollectionViewCell.self, forCellWithReuseIdentifier: DesignCollectionViewCell.ID)
+    }
+    
+    private func configureUI(){
+        
+        // hide navigation bar
+        navigationController?.isNavigationBarHidden = true
+        
+        // titleLabel
+        view.addSubview(titleLabel)
+        titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
+        titleLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+    
+        // menuBtn
+        view.addSubview(menuBtn)
+        menuBtn.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
+        menuBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        
+        // cartBtn
+        view.addSubview(cartBtn)
+        cartBtn.centerYAnchor.constraint(equalTo: menuBtn.centerYAnchor).isActive = true
+        cartBtn.rightAnchor.constraint(equalTo: menuBtn.leftAnchor, constant: -20).isActive = true
+        
+        // collectionView
         view.addSubview(collectionView)
+        collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20).isActive = true
+        collectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        collectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
     }
     
     private func bind(){
+    
+        viewModel.designListSubject.bind(to: collectionView.rx.items(cellIdentifier: DesignCollectionViewCell.ID, cellType: DesignCollectionViewCell.self)) { index, data, cell in
+            
         
+            cell.onData(data)
+        }.disposed(by: self.disposeBag)
+        
+        Observable.zip(collectionView.rx.modelSelected(Design.self), collectionView.rx.itemSelected)
+            .bind { [weak self] model, indexPath in
+                print("Debug : collectionViewCell tap -> indexpath : \(indexPath), model : \(model)")
+            }
     }
     
+    
+    @objc func didClickCartBtn(){
+        print("debug: DesignListViewController didClickCartBtn ")
+    }
+    
+    @objc func didClickMenuBtn(){
+        print("debug: DesignListViewController didClickMenuBtn ")
+    }
     
 }

@@ -18,6 +18,11 @@
 		92423C392760BF3D00A32C83 /* DesignListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92423C382760BF3D00A32C83 /* DesignListViewModel.swift */; };
 		92423C3D2760C94800A32C83 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92423C3C2760C94800A32C83 /* BaseViewController.swift */; };
 		92423C3F2760D05F00A32C83 /* DesignCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92423C3E2760D05F00A32C83 /* DesignCollectionViewCell.swift */; };
+		92C5DFE2276193FD00F0CF1F /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5DFE1276193FD00F0CF1F /* HttpManager.swift */; };
+		92C5DFE42761965E00F0CF1F /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5DFE32761965E00F0CF1F /* Design.swift */; };
+		92C5DFE62761972300F0CF1F /* DesignListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5DFE52761972300F0CF1F /* DesignListRepository.swift */; };
+		92C5DFE82761973600F0CF1F /* DefaultDesignListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5DFE72761973600F0CF1F /* DefaultDesignListRepository.swift */; };
+		92C5DFEA2761A9A200F0CF1F /* MockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5DFE92761A9A200F0CF1F /* MockManager.swift */; };
 		92D12222276052BF000F87F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D12221276052BF000F87F8 /* AppDelegate.swift */; };
 		92D12224276052BF000F87F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D12223276052BF000F87F8 /* SceneDelegate.swift */; };
 		92D12226276052BF000F87F8 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D12225276052BF000F87F8 /* SplashViewController.swift */; };
@@ -59,6 +64,11 @@
 		92423C382760BF3D00A32C83 /* DesignListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignListViewModel.swift; sourceTree = "<group>"; };
 		92423C3C2760C94800A32C83 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		92423C3E2760D05F00A32C83 /* DesignCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCollectionViewCell.swift; sourceTree = "<group>"; };
+		92C5DFE1276193FD00F0CF1F /* HttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
+		92C5DFE32761965E00F0CF1F /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
+		92C5DFE52761972300F0CF1F /* DesignListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignListRepository.swift; sourceTree = "<group>"; };
+		92C5DFE72761973600F0CF1F /* DefaultDesignListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDesignListRepository.swift; sourceTree = "<group>"; };
+		92C5DFE92761A9A200F0CF1F /* MockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockManager.swift; sourceTree = "<group>"; };
 		92D1221E276052BF000F87F8 /* FabBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FabBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D12221276052BF000F87F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92D12223276052BF000F87F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -181,9 +191,9 @@
 		92423C302760BE4A00A32C83 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				92423C422760D6B300A32C83 /* PersistentStorages */,
 				92423C402760D62800A32C83 /* Repositories */,
 				92423C3A2760BFC500A32C83 /* Network */,
+				92423C422760D6B300A32C83 /* PersistentStorages */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -218,8 +228,8 @@
 		92423C342760BEF500A32C83 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				92423C362760BF2A00A32C83 /* DesignListViewController.swift */,
 				92423C3E2760D05F00A32C83 /* DesignCollectionViewCell.swift */,
+				92423C362760BF2A00A32C83 /* DesignListViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -235,6 +245,7 @@
 		92423C3A2760BFC500A32C83 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				92C5DFE1276193FD00F0CF1F /* HttpManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -250,6 +261,7 @@
 		92423C402760D62800A32C83 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				92C5DFE72761973600F0CF1F /* DefaultDesignListRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -257,6 +269,7 @@
 		92423C412760D63400A32C83 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				92C5DFE52761972300F0CF1F /* DesignListRepository.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -264,6 +277,7 @@
 		92423C422760D6B300A32C83 /* PersistentStorages */ = {
 			isa = PBXGroup;
 			children = (
+				92C5DFE92761A9A200F0CF1F /* MockManager.swift */,
 			);
 			path = PersistentStorages;
 			sourceTree = "<group>";
@@ -271,6 +285,7 @@
 		92423C432760D6C200A32C83 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				92C5DFE32761965E00F0CF1F /* Design.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -566,13 +581,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92C5DFE42761965E00F0CF1F /* Design.swift in Sources */,
+				92C5DFE82761973600F0CF1F /* DefaultDesignListRepository.swift in Sources */,
 				92423C392760BF3D00A32C83 /* DesignListViewModel.swift in Sources */,
 				92D12226276052BF000F87F8 /* SplashViewController.swift in Sources */,
+				92C5DFE62761972300F0CF1F /* DesignListRepository.swift in Sources */,
 				92D12222276052BF000F87F8 /* AppDelegate.swift in Sources */,
 				92423C372760BF2A00A32C83 /* DesignListViewController.swift in Sources */,
 				92D12224276052BF000F87F8 /* SceneDelegate.swift in Sources */,
 				92423C3F2760D05F00A32C83 /* DesignCollectionViewCell.swift in Sources */,
+				92C5DFEA2761A9A200F0CF1F /* MockManager.swift in Sources */,
 				92423C3D2760C94800A32C83 /* BaseViewController.swift in Sources */,
+				92C5DFE2276193FD00F0CF1F /* HttpManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

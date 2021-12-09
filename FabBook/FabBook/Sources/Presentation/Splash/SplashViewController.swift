@@ -21,13 +21,12 @@ class SplashViewController: BaseViewController {
     //MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        configureUI()
         goDesingListViewController()
     }
     
     //MARK: methods
-    private func setup(){
-        view.backgroundColor = .white
+    private func configureUI(){
         view.addSubview(titleLabel)
         titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         titleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
