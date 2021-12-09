@@ -63,7 +63,7 @@ class DesignListViewController: BaseViewController {
         layout.minimumLineSpacing = 20
         layout.minimumInteritemSpacing = 20
         let width = (view.frame.width - 60 ) / 2
-        layout.itemSize = CGSize(width: width, height: 200)
+        layout.itemSize = CGSize(width: width, height: (width * 1.4))
         // collectionview
         collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .yellow
@@ -111,7 +111,10 @@ class DesignListViewController: BaseViewController {
         
         Observable.zip(collectionView.rx.modelSelected(Design.self), collectionView.rx.itemSelected)
             .bind { [weak self] model, indexPath in
-                print("Debug : collectionViewCell tap -> indexpath : \(indexPath), model : \(model)")
+                // print("Debug : collectionViewCell tap -> indexpath : \(indexPath), model : \(model)")
+                print("debug : selected template Code -> \(model.templateCode ?? "no template code")")
+                
+                
             }
     }
     

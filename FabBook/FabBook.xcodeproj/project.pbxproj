@@ -203,6 +203,7 @@
 			children = (
 				92423C3B2760C38A00A32C83 /* Splash */,
 				92423C332760BEA100A32C83 /* DesignList */,
+				929726F52761DB6D006B1E7E /* PhotoPick */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -288,6 +289,29 @@
 				92C5DFE32761965E00F0CF1F /* Design.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		929726F52761DB6D006B1E7E /* PhotoPick */ = {
+			isa = PBXGroup;
+			children = (
+				929726F72761DC09006B1E7E /* ViewModel */,
+				929726F62761DC04006B1E7E /* View */,
+			);
+			path = PhotoPick;
+			sourceTree = "<group>";
+		};
+		929726F62761DC04006B1E7E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		929726F72761DC09006B1E7E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		92D12215276052BF000F87F8 = {

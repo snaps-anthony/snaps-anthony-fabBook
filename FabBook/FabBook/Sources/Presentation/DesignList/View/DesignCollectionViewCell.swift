@@ -11,19 +11,8 @@ class DesignCollectionViewCell: UICollectionViewCell {
 
     
     static let ID = "DesignCollectionViewCell"
-    var imageView : UIImageView = {
-        var view = UIImageView()
-        view.backgroundColor = .gray
-        view.contentMode = .scaleAspectFill
-        view.clipsToBounds = true
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    var titleLabel : UILabel = {
-       var lbl = UILabel()
-        lbl.text = "design title"
-        return lbl
-    }()
+    var imageView : UIImageView!
+    var titleLabel = UILabel()
     var data : Design?
     
     override init(frame: CGRect) {
@@ -37,26 +26,38 @@ class DesignCollectionViewCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         imageView.image = nil
-        print("Debug : cell prepareForReuse")
     }
     
     func configureUI(){
-        print("Debug : cell configureUI")
         backgroundColor = .green
-        addSubview(imageView)
-        imageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        imageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         
+        //imageView
+        imageView = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: self.frame.width, height: self.frame.width))
+        imageView.backgroundColor = .gray
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubview(imageView)
+        
+        // title
+        titleLabel.text = "design title"
+        titleLabel.font = .systemFont(ofSize: 13)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(titleLabel)
+        
+        titleLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         
     }
     
     func onData(_ designData : Design) {
         data = designData
-        print("Debug : cell onData")
-        print("debug : cell with -> \(self.frame.width)")
-        print("debug : cell heigth -> \(self.frame.height)")
         
-        // image
+        // title
+        titleLabel.text = data?.templateCode ?? "design title"
+        
+        // image 
         
         // crop image
         
