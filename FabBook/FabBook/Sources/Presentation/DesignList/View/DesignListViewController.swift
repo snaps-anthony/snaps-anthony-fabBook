@@ -104,20 +104,23 @@ class DesignListViewController: BaseViewController {
     private func bind(){
     
         viewModel.designListSubject.bind(to: collectionView.rx.items(cellIdentifier: DesignCollectionViewCell.ID, cellType: DesignCollectionViewCell.self)) { index, data, cell in
-            
-        
             cell.onData(data)
         }.disposed(by: self.disposeBag)
         
         Observable.zip(collectionView.rx.modelSelected(Design.self), collectionView.rx.itemSelected)
             .bind { [weak self] model, indexPath in
-                // print("Debug : collectionViewCell tap -> indexpath : \(indexPath), model : \(model)")
                 print("debug : selected template Code -> \(model.templateCode ?? "no template code")")
                 
+                // ProductGenerator setting
+                let policy = FabBookPolicy()
+                ProductGenerator.shared.policy = policy
+                ProductGenerator.shared.templateCode = model.templateCode
                 
-            }
+                //execute PhotoPicker
+                 let photoPicker = AssetsTrayViewController()
+                self?.navigationController?.pushViewController(photoPicker, animated: true)
+            }.disposed(by: self.disposeBag)
     }
-    
     
     @objc func didClickCartBtn(){
         print("debug: DesignListViewController didClickCartBtn ")
