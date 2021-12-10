@@ -11,4 +11,5 @@ import RxSwift
 protocol AssetsTrayRepositoryInterface {
     
     func fetchGroup() -> Observable<[IAssetsGroup]>
+//    func fetchGroup() -> Observable<[Any]>
 }

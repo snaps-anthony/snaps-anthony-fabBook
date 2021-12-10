@@ -326,8 +326,8 @@
 		92423C432760D6C200A32C83 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				92BA45F127635CE500249E37 /* Design */,
 				92BA45DD2763400000249E37 /* IAsset */,
-				92C5DFE32761965E00F0CF1F /* Design.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -425,6 +425,14 @@
 				92BA45EF27634B9500249E37 /* DeviceAssetsGroupCategory.swift */,
 			);
 			path = IAssets;
+			sourceTree = "<group>";
+		};
+		92BA45F127635CE500249E37 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				92C5DFE32761965E00F0CF1F /* Design.swift */,
+			);
+			path = Design;
 			sourceTree = "<group>";
 		};
 		92D12215276052BF000F87F8 = {

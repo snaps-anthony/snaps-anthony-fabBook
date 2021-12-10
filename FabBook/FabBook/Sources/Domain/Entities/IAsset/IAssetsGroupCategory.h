@@ -9,7 +9,7 @@
 
 
 #import "IAssetsLibrary.h"
-
+NS_ASSUME_NONNULL_BEGIN
 @protocol IAssetsGroupCategory <NSObject>
 
 #pragma mark - 기본정보
@@ -94,3 +94,4 @@
 
 
 
+NS_ASSUME_NONNULL_END

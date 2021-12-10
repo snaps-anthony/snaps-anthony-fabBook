@@ -11,7 +11,11 @@ class DeviceAssetLoader {
     
     static let shared = DeviceAssetLoader()
     
-    func assetsGroupWithResult( completion : @escaping ([Any], Error) -> Void){
+    func assetsGroupWithResult( completion : @escaping ([Any], Error?) -> Void){
+        
+        // SnapsDeviceAssetLoader -> assetsGroupWithResultBlock
+        
+        
         
     }
     
