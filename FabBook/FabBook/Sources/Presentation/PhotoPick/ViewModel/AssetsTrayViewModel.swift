@@ -10,9 +10,11 @@ import Foundation
 class AssetsTrayViewModel {
     
     //MARK: properties
-    
+    var assetsTrayRepository = AssetsTrayRepository()
     
     //MARK: methods
-    
+    func fetchGroups() {
+        
+    }
     
 }

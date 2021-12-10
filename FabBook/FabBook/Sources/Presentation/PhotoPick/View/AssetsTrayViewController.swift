@@ -38,10 +38,8 @@ class AssetsTrayViewController: BaseViewController {
         
         setupBindings()
 //        viewModel.groupsFetching.onNext(()) //  FethGroups
-        
-        
-        
-        
+        viewModel.fetchGroups()
+    
     }
     
     

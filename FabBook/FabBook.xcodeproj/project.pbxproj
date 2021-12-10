@@ -24,10 +24,12 @@
 		929727012761E485006B1E7E /* AssetsTrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929727002761E485006B1E7E /* AssetsTrayViewController.swift */; };
 		929727032761E49F006B1E7E /* AssetsTrayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929727022761E49F006B1E7E /* AssetsTrayViewModel.swift */; };
 		92BA45C62762FA5B00249E37 /* NavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BA45C52762FA5B00249E37 /* NavigationTitleView.swift */; };
+		92BA45D52763327B00249E37 /* AssetsTrayRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BA45D42763327B00249E37 /* AssetsTrayRepositoryInterface.swift */; };
+		92BA45D72763328B00249E37 /* AssetsTrayRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BA45D62763328B00249E37 /* AssetsTrayRepository.swift */; };
 		92C5DFE2276193FD00F0CF1F /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5DFE1276193FD00F0CF1F /* HttpManager.swift */; };
 		92C5DFE42761965E00F0CF1F /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5DFE32761965E00F0CF1F /* Design.swift */; };
-		92C5DFE62761972300F0CF1F /* DesignListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5DFE52761972300F0CF1F /* DesignListRepository.swift */; };
-		92C5DFE82761973600F0CF1F /* DefaultDesignListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5DFE72761973600F0CF1F /* DefaultDesignListRepository.swift */; };
+		92C5DFE62761972300F0CF1F /* DesignListRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5DFE52761972300F0CF1F /* DesignListRepositoryInterface.swift */; };
+		92C5DFE82761973600F0CF1F /* DesignListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5DFE72761973600F0CF1F /* DesignListRepository.swift */; };
 		92C5DFEA2761A9A200F0CF1F /* MockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5DFE92761A9A200F0CF1F /* MockManager.swift */; };
 		92D12222276052BF000F87F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D12221276052BF000F87F8 /* AppDelegate.swift */; };
 		92D12224276052BF000F87F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D12223276052BF000F87F8 /* SceneDelegate.swift */; };
@@ -76,10 +78,12 @@
 		929727002761E485006B1E7E /* AssetsTrayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsTrayViewController.swift; sourceTree = "<group>"; };
 		929727022761E49F006B1E7E /* AssetsTrayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsTrayViewModel.swift; sourceTree = "<group>"; };
 		92BA45C52762FA5B00249E37 /* NavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleView.swift; sourceTree = "<group>"; };
+		92BA45D42763327B00249E37 /* AssetsTrayRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsTrayRepositoryInterface.swift; sourceTree = "<group>"; };
+		92BA45D62763328B00249E37 /* AssetsTrayRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsTrayRepository.swift; sourceTree = "<group>"; };
 		92C5DFE1276193FD00F0CF1F /* HttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
 		92C5DFE32761965E00F0CF1F /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
-		92C5DFE52761972300F0CF1F /* DesignListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignListRepository.swift; sourceTree = "<group>"; };
-		92C5DFE72761973600F0CF1F /* DefaultDesignListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDesignListRepository.swift; sourceTree = "<group>"; };
+		92C5DFE52761972300F0CF1F /* DesignListRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignListRepositoryInterface.swift; sourceTree = "<group>"; };
+		92C5DFE72761973600F0CF1F /* DesignListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignListRepository.swift; sourceTree = "<group>"; };
 		92C5DFE92761A9A200F0CF1F /* MockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockManager.swift; sourceTree = "<group>"; };
 		92D1221E276052BF000F87F8 /* FabBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FabBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D12221276052BF000F87F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -277,7 +281,8 @@
 		92423C402760D62800A32C83 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				92C5DFE72761973600F0CF1F /* DefaultDesignListRepository.swift */,
+				92C5DFE72761973600F0CF1F /* DesignListRepository.swift */,
+				92BA45D62763328B00249E37 /* AssetsTrayRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -285,7 +290,8 @@
 		92423C412760D63400A32C83 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
-				92C5DFE52761972300F0CF1F /* DesignListRepository.swift */,
+				92C5DFE52761972300F0CF1F /* DesignListRepositoryInterface.swift */,
+				92BA45D42763327B00249E37 /* AssetsTrayRepositoryInterface.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -647,13 +653,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92BA45D72763328B00249E37 /* AssetsTrayRepository.swift in Sources */,
 				92C5DFE42761965E00F0CF1F /* Design.swift in Sources */,
-				92C5DFE82761973600F0CF1F /* DefaultDesignListRepository.swift in Sources */,
+				92C5DFE82761973600F0CF1F /* DesignListRepository.swift in Sources */,
 				92423C392760BF3D00A32C83 /* DesignListViewModel.swift in Sources */,
 				92D12226276052BF000F87F8 /* SplashViewController.swift in Sources */,
 				929727032761E49F006B1E7E /* AssetsTrayViewModel.swift in Sources */,
 				929726FF2761E1D5006B1E7E /* PolicyInterface.swift in Sources */,
-				92C5DFE62761972300F0CF1F /* DesignListRepository.swift in Sources */,
+				92C5DFE62761972300F0CF1F /* DesignListRepositoryInterface.swift in Sources */,
 				92D12222276052BF000F87F8 /* AppDelegate.swift in Sources */,
 				929726FA2761DFCE006B1E7E /* FabBookPolicy.swift in Sources */,
 				929726FC2761DFE5006B1E7E /* ProductGenerator.swift in Sources */,
@@ -661,6 +668,7 @@
 				92D12224276052BF000F87F8 /* SceneDelegate.swift in Sources */,
 				929727012761E485006B1E7E /* AssetsTrayViewController.swift in Sources */,
 				92423C3F2760D05F00A32C83 /* DesignCollectionViewCell.swift in Sources */,
+				92BA45D52763327B00249E37 /* AssetsTrayRepositoryInterface.swift in Sources */,
 				92C5DFEA2761A9A200F0CF1F /* MockManager.swift in Sources */,
 				92423C3D2760C94800A32C83 /* BaseViewController.swift in Sources */,
 				92BA45C62762FA5B00249E37 /* NavigationTitleView.swift in Sources */,

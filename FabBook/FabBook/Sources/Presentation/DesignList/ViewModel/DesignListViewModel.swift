@@ -11,7 +11,7 @@ import RxSwift
 class DesignListViewModel {
     
     //MARK: properties
-    let designRepository = DefaultDesignListRepository()
+    let designRepository = DesignListRepository()
     let designListSubject = BehaviorSubject(value: [Design]())
     
     //MARK: methods

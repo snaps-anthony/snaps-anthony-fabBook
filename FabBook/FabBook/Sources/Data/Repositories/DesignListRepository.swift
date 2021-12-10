@@ -1,5 +1,5 @@
 //
-//  DefaultDesignListRepository.swift
+//  DesignListRepository.swift
 //  FabBook
 //
 //  Created by anthony on 2021/12/09.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class DefaultDesignListRepository : DesignListRepository {
+final class DesignListRepository : DesignListRepositoryInterface {
     
     func fetchDesignList(completion: @escaping ([Design]?) -> Void) {
 //        HttpManager.shared.getDesignList { designList in

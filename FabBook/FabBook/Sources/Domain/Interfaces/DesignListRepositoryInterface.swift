@@ -1,5 +1,5 @@
 //
-//  DesignListRepository.swift
+//  DesignListRepositoryInterface.swift
 //  FabBook
 //
 //  Created by anthony on 2021/12/09.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol DesignListRepository {
+protocol DesignListRepositoryInterface {
     
     func fetchDesignList(completion: @escaping([Design]?) -> Void)
 }
