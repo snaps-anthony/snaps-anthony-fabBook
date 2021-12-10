@@ -23,6 +23,7 @@
 		929726FF2761E1D5006B1E7E /* PolicyInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929726FE2761E1D5006B1E7E /* PolicyInterface.swift */; };
 		929727012761E485006B1E7E /* AssetsTrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929727002761E485006B1E7E /* AssetsTrayViewController.swift */; };
 		929727032761E49F006B1E7E /* AssetsTrayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929727022761E49F006B1E7E /* AssetsTrayViewModel.swift */; };
+		92BA45C62762FA5B00249E37 /* NavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BA45C52762FA5B00249E37 /* NavigationTitleView.swift */; };
 		92C5DFE2276193FD00F0CF1F /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5DFE1276193FD00F0CF1F /* HttpManager.swift */; };
 		92C5DFE42761965E00F0CF1F /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5DFE32761965E00F0CF1F /* Design.swift */; };
 		92C5DFE62761972300F0CF1F /* DesignListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5DFE52761972300F0CF1F /* DesignListRepository.swift */; };
@@ -74,6 +75,7 @@
 		929726FE2761E1D5006B1E7E /* PolicyInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyInterface.swift; sourceTree = "<group>"; };
 		929727002761E485006B1E7E /* AssetsTrayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsTrayViewController.swift; sourceTree = "<group>"; };
 		929727022761E49F006B1E7E /* AssetsTrayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsTrayViewModel.swift; sourceTree = "<group>"; };
+		92BA45C52762FA5B00249E37 /* NavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleView.swift; sourceTree = "<group>"; };
 		92C5DFE1276193FD00F0CF1F /* HttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
 		92C5DFE32761965E00F0CF1F /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		92C5DFE52761972300F0CF1F /* DesignListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignListRepository.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				92423C322760BE7A00A32C83 /* Domain */,
 				92423C302760BE4A00A32C83 /* Data */,
 				92423C202760568100A32C83 /* Classes */,
+				92BA45C02762F9B400249E37 /* Utils */,
 				92D12221276052BF000F87F8 /* AppDelegate.swift */,
 				92D12223276052BF000F87F8 /* SceneDelegate.swift */,
 			);
@@ -212,7 +215,7 @@
 		92423C312760BE5700A32C83 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				92423C3C2760C94800A32C83 /* BaseViewController.swift */,
+				92BA45BF2762DEF900249E37 /* Common */,
 				92423C3B2760C38A00A32C83 /* Splash */,
 				92423C332760BEA100A32C83 /* DesignList */,
 				929726F52761DB6D006B1E7E /* PhotoPick */,
@@ -335,6 +338,22 @@
 				929726F92761DFCE006B1E7E /* FabBookPolicy.swift */,
 			);
 			path = Policies;
+			sourceTree = "<group>";
+		};
+		92BA45BF2762DEF900249E37 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				92423C3C2760C94800A32C83 /* BaseViewController.swift */,
+				92BA45C52762FA5B00249E37 /* NavigationTitleView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		92BA45C02762F9B400249E37 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		92D12215276052BF000F87F8 = {
@@ -644,6 +663,7 @@
 				92423C3F2760D05F00A32C83 /* DesignCollectionViewCell.swift in Sources */,
 				92C5DFEA2761A9A200F0CF1F /* MockManager.swift in Sources */,
 				92423C3D2760C94800A32C83 /* BaseViewController.swift in Sources */,
+				92BA45C62762FA5B00249E37 /* NavigationTitleView.swift in Sources */,
 				92C5DFE2276193FD00F0CF1F /* HttpManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -743,7 +763,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -798,7 +818,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -816,6 +836,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U5K7UFZ43J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FabBook/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -844,6 +865,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U5K7UFZ43J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FabBook/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

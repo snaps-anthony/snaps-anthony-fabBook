@@ -16,6 +16,7 @@ class DesignListViewController: BaseViewController {
         var lbl = UILabel()
         lbl.text = "디자인"
         lbl.font = .boldSystemFont(ofSize: 20)
+        lbl.textColor = .black
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()

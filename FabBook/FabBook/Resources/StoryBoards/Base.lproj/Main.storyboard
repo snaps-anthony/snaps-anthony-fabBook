@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -36,8 +37,8 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <navigationItem title="사진 선택" id="E5E-aA-YIS">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="cu9-yK-8kO">
+                                    <navigationItem id="E5E-aA-YIS">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="before" id="cu9-yK-8kO">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Item" id="Z6B-eI-mq4"/>
@@ -46,14 +47,14 @@
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x7J-VO-kOU" userLabel="sep">
                                 <rect key="frame" x="0.0" y="88" width="414" height="1"/>
-                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Iao-ut-G0E"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TSr-7S-A49">
                                 <rect key="frame" x="0.0" y="89" width="414" height="87"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="87" id="1rM-iB-yeB"/>
                                 </constraints>
@@ -99,7 +100,7 @@
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Me9-15-JFh">
                                 <rect key="frame" x="0.0" y="176" width="414" height="686"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="3" minimumInteritemSpacing="3" id="ntL-1j-ZYa">
                                     <size key="itemSize" width="123" height="123"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -205,7 +206,7 @@
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FMk-l0-38s">
                                 <rect key="frame" x="0.0" y="89" width="414" height="0.0"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="VVX-0V-9Re"/>
                                 </constraints>
@@ -276,7 +277,7 @@
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rqr-JW-xgT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="rqr-JW-xgT" firstAttribute="trailing" secondItem="xg9-9f-cla" secondAttribute="trailing" id="4Qy-hr-GNE"/>
                             <constraint firstItem="Me9-15-JFh" firstAttribute="top" secondItem="TSr-7S-A49" secondAttribute="bottom" id="DUg-Xf-R9Z"/>
@@ -304,6 +305,7 @@
                         <outlet property="groupsCollectionView" destination="FMk-l0-38s" id="57b-Yl-NnY"/>
                         <outlet property="groupsCollectionViewHeight" destination="VVX-0V-9Re" id="JtL-ZA-8hB"/>
                         <outlet property="leftBackBarBtn" destination="cu9-yK-8kO" id="FV8-s0-EkB"/>
+                        <outlet property="naviItem" destination="E5E-aA-YIS" id="KI9-cG-hE5"/>
                         <outlet property="navigationBar" destination="xg9-9f-cla" id="vXQ-ot-2qQ"/>
                         <outlet property="rightSaveBarBtn" destination="Z6B-eI-mq4" id="dvY-bN-MrF"/>
                         <outlet property="trayCollectionView" destination="TSr-7S-A49" id="3AV-rb-Knu"/>
@@ -316,14 +318,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="before" width="20" height="20"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="circlebadge" catalog="system" width="128" height="120"/>
         <image name="clear.fill" catalog="system" width="128" height="114"/>
         <image name="exclamationmark.triangle.fill" catalog="system" width="128" height="112"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

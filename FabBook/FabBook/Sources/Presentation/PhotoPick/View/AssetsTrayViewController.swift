@@ -34,24 +34,32 @@ class AssetsTrayViewController: BaseViewController {
 
         activityIndicator.isHidden = true
         setupNavigationItems()
-        setupBindings()
         
-//        //  FethGroups
-//        viewModel.groupsFetching.onNext(())
+        
+        setupBindings()
+//        viewModel.groupsFetching.onNext(()) //  FethGroups
+        
+        
+        
+        
     }
     
     
     //MARK: methods
     func setupNavigationItems(){
     
+        //left
         leftBackBarBtn.target = self
         leftBackBarBtn.action = #selector(didClickLeftBackButton)
      
+        //right
         rightSaveBarBtn.title = "담기"
         rightSaveBarBtn.tintColor = .black
         rightSaveBarBtn.target = self
         rightSaveBarBtn.action = #selector(didClickRightSavekButton)
         
+        // title view
+        setupTitleView(title: "title test " , imageName: "")
     }
     
     
@@ -61,6 +69,7 @@ class AssetsTrayViewController: BaseViewController {
     
     @objc func didClickLeftBackButton(){
         print("debug : didClickLeftBackButton ")
+        navigationController?.popViewController(animated: true)
     }
     
     
@@ -68,5 +77,7 @@ class AssetsTrayViewController: BaseViewController {
         print("debug : didClickRightSavekButton ")
     }
     
-
+    override func didTapTitleView() {
+        print("debug : override didClickNavigationTitle ")
+    }
 }
