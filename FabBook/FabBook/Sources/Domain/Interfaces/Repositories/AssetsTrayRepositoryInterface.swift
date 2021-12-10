@@ -6,8 +6,9 @@
 //
 
 import Foundation
- 
+import RxSwift
+
 protocol AssetsTrayRepositoryInterface {
     
-    func fetchGroup()
+    func fetchGroup() -> Observable<[IAssetsGroup]>
 }

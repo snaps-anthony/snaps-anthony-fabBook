@@ -26,6 +26,11 @@
 		92BA45C62762FA5B00249E37 /* NavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BA45C52762FA5B00249E37 /* NavigationTitleView.swift */; };
 		92BA45D52763327B00249E37 /* AssetsTrayRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BA45D42763327B00249E37 /* AssetsTrayRepositoryInterface.swift */; };
 		92BA45D72763328B00249E37 /* AssetsTrayRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BA45D62763328B00249E37 /* AssetsTrayRepository.swift */; };
+		92BA45DF2763422100249E37 /* DeviceAssetLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BA45DE2763422100249E37 /* DeviceAssetLoader.swift */; };
+		92BA45E72763458200249E37 /* DeviceAssetsLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BA45E62763458200249E37 /* DeviceAssetsLibrary.swift */; };
+		92BA45EA27634AAC00249E37 /* IAssetsLibraryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BA45E927634AAC00249E37 /* IAssetsLibraryInterface.swift */; };
+		92BA45ED27634B2900249E37 /* IAssetsGroupCategoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BA45EC27634B2900249E37 /* IAssetsGroupCategoryInterface.swift */; };
+		92BA45F027634B9500249E37 /* DeviceAssetsGroupCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BA45EF27634B9500249E37 /* DeviceAssetsGroupCategory.swift */; };
 		92C5DFE2276193FD00F0CF1F /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5DFE1276193FD00F0CF1F /* HttpManager.swift */; };
 		92C5DFE42761965E00F0CF1F /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5DFE32761965E00F0CF1F /* Design.swift */; };
 		92C5DFE62761972300F0CF1F /* DesignListRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5DFE52761972300F0CF1F /* DesignListRepositoryInterface.swift */; };
@@ -80,6 +85,16 @@
 		92BA45C52762FA5B00249E37 /* NavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleView.swift; sourceTree = "<group>"; };
 		92BA45D42763327B00249E37 /* AssetsTrayRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsTrayRepositoryInterface.swift; sourceTree = "<group>"; };
 		92BA45D62763328B00249E37 /* AssetsTrayRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsTrayRepository.swift; sourceTree = "<group>"; };
+		92BA45D82763335500249E37 /* FabBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FabBook-Bridging-Header.h"; sourceTree = "<group>"; };
+		92BA45D92763335600249E37 /* IAsset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAsset.h; sourceTree = "<group>"; };
+		92BA45DA27633A5500249E37 /* IAssetsGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAssetsGroup.h; sourceTree = "<group>"; };
+		92BA45DB27633F9600249E37 /* IAssetsGroupCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAssetsGroupCategory.h; sourceTree = "<group>"; };
+		92BA45DC27633FCE00249E37 /* IAssetsLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAssetsLibrary.h; sourceTree = "<group>"; };
+		92BA45DE2763422100249E37 /* DeviceAssetLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceAssetLoader.swift; sourceTree = "<group>"; };
+		92BA45E62763458200249E37 /* DeviceAssetsLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceAssetsLibrary.swift; sourceTree = "<group>"; };
+		92BA45E927634AAC00249E37 /* IAssetsLibraryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAssetsLibraryInterface.swift; sourceTree = "<group>"; };
+		92BA45EC27634B2900249E37 /* IAssetsGroupCategoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAssetsGroupCategoryInterface.swift; sourceTree = "<group>"; };
+		92BA45EF27634B9500249E37 /* DeviceAssetsGroupCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceAssetsGroupCategory.swift; sourceTree = "<group>"; };
 		92C5DFE1276193FD00F0CF1F /* HttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
 		92C5DFE32761965E00F0CF1F /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		92C5DFE52761972300F0CF1F /* DesignListRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignListRepositoryInterface.swift; sourceTree = "<group>"; };
@@ -168,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				929726FB2761DFE5006B1E7E /* ProductGenerator.swift */,
-				929726FD2761E0F3006B1E7E /* Policies */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -191,6 +205,7 @@
 				92BA45C02762F9B400249E37 /* Utils */,
 				92D12221276052BF000F87F8 /* AppDelegate.swift */,
 				92D12223276052BF000F87F8 /* SceneDelegate.swift */,
+				92BA45D82763335500249E37 /* FabBook-Bridging-Header.h */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -209,7 +224,9 @@
 		92423C302760BE4A00A32C83 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				92BA45EB27634AE100249E37 /* IAssets */,
 				92423C402760D62800A32C83 /* Repositories */,
+				92BA45E1276343D400249E37 /* Policies */,
 				92423C3A2760BFC500A32C83 /* Network */,
 				92423C422760D6B300A32C83 /* PersistentStorages */,
 			);
@@ -290,8 +307,9 @@
 		92423C412760D63400A32C83 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
-				92C5DFE52761972300F0CF1F /* DesignListRepositoryInterface.swift */,
-				92BA45D42763327B00249E37 /* AssetsTrayRepositoryInterface.swift */,
+				92BA45E827634A8C00249E37 /* IAssets */,
+				929726FD2761E0F3006B1E7E /* Policies */,
+				92BA45E0276342CD00249E37 /* Repositories */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -300,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				92C5DFE92761A9A200F0CF1F /* MockManager.swift */,
+				92BA45DE2763422100249E37 /* DeviceAssetLoader.swift */,
 			);
 			path = PersistentStorages;
 			sourceTree = "<group>";
@@ -307,6 +326,7 @@
 		92423C432760D6C200A32C83 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				92BA45DD2763400000249E37 /* IAsset */,
 				92C5DFE32761965E00F0CF1F /* Design.swift */,
 			);
 			path = Entities;
@@ -341,7 +361,6 @@
 			isa = PBXGroup;
 			children = (
 				929726FE2761E1D5006B1E7E /* PolicyInterface.swift */,
-				929726F92761DFCE006B1E7E /* FabBookPolicy.swift */,
 			);
 			path = Policies;
 			sourceTree = "<group>";
@@ -360,6 +379,52 @@
 			children = (
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		92BA45DD2763400000249E37 /* IAsset */ = {
+			isa = PBXGroup;
+			children = (
+				92BA45D92763335600249E37 /* IAsset.h */,
+				92BA45DA27633A5500249E37 /* IAssetsGroup.h */,
+				92BA45DC27633FCE00249E37 /* IAssetsLibrary.h */,
+				92BA45DB27633F9600249E37 /* IAssetsGroupCategory.h */,
+			);
+			path = IAsset;
+			sourceTree = "<group>";
+		};
+		92BA45E0276342CD00249E37 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				92C5DFE52761972300F0CF1F /* DesignListRepositoryInterface.swift */,
+				92BA45D42763327B00249E37 /* AssetsTrayRepositoryInterface.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		92BA45E1276343D400249E37 /* Policies */ = {
+			isa = PBXGroup;
+			children = (
+				929726F92761DFCE006B1E7E /* FabBookPolicy.swift */,
+			);
+			path = Policies;
+			sourceTree = "<group>";
+		};
+		92BA45E827634A8C00249E37 /* IAssets */ = {
+			isa = PBXGroup;
+			children = (
+				92BA45E927634AAC00249E37 /* IAssetsLibraryInterface.swift */,
+				92BA45EC27634B2900249E37 /* IAssetsGroupCategoryInterface.swift */,
+			);
+			path = IAssets;
+			sourceTree = "<group>";
+		};
+		92BA45EB27634AE100249E37 /* IAssets */ = {
+			isa = PBXGroup;
+			children = (
+				92BA45E62763458200249E37 /* DeviceAssetsLibrary.swift */,
+				92BA45EF27634B9500249E37 /* DeviceAssetsGroupCategory.swift */,
+			);
+			path = IAssets;
 			sourceTree = "<group>";
 		};
 		92D12215276052BF000F87F8 = {
@@ -484,6 +549,7 @@
 				TargetAttributes = {
 					92D1221D276052BF000F87F8 = {
 						CreatedOnToolsVersion = 13.1;
+						LastSwiftMigration = 1310;
 					};
 					92D12233276052C0000F87F8 = {
 						CreatedOnToolsVersion = 13.1;
@@ -653,17 +719,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92BA45E72763458200249E37 /* DeviceAssetsLibrary.swift in Sources */,
 				92BA45D72763328B00249E37 /* AssetsTrayRepository.swift in Sources */,
 				92C5DFE42761965E00F0CF1F /* Design.swift in Sources */,
 				92C5DFE82761973600F0CF1F /* DesignListRepository.swift in Sources */,
+				92BA45DF2763422100249E37 /* DeviceAssetLoader.swift in Sources */,
 				92423C392760BF3D00A32C83 /* DesignListViewModel.swift in Sources */,
 				92D12226276052BF000F87F8 /* SplashViewController.swift in Sources */,
 				929727032761E49F006B1E7E /* AssetsTrayViewModel.swift in Sources */,
 				929726FF2761E1D5006B1E7E /* PolicyInterface.swift in Sources */,
 				92C5DFE62761972300F0CF1F /* DesignListRepositoryInterface.swift in Sources */,
 				92D12222276052BF000F87F8 /* AppDelegate.swift in Sources */,
+				92BA45EA27634AAC00249E37 /* IAssetsLibraryInterface.swift in Sources */,
 				929726FA2761DFCE006B1E7E /* FabBookPolicy.swift in Sources */,
 				929726FC2761DFE5006B1E7E /* ProductGenerator.swift in Sources */,
+				92BA45ED27634B2900249E37 /* IAssetsGroupCategoryInterface.swift in Sources */,
 				92423C372760BF2A00A32C83 /* DesignListViewController.swift in Sources */,
 				92D12224276052BF000F87F8 /* SceneDelegate.swift in Sources */,
 				929727012761E485006B1E7E /* AssetsTrayViewController.swift in Sources */,
@@ -673,6 +743,7 @@
 				92423C3D2760C94800A32C83 /* BaseViewController.swift in Sources */,
 				92BA45C62762FA5B00249E37 /* NavigationTitleView.swift in Sources */,
 				92C5DFE2276193FD00F0CF1F /* HttpManager.swift in Sources */,
+				92BA45F027634B9500249E37 /* DeviceAssetsGroupCategory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -842,6 +913,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U5K7UFZ43J;
@@ -860,6 +932,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = anthony.FabBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "FabBook/Sources/FabBook-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -871,6 +945,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U5K7UFZ43J;
@@ -889,6 +964,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = anthony.FabBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "FabBook/Sources/FabBook-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

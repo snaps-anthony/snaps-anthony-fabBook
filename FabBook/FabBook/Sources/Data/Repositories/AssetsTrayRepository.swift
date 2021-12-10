@@ -6,11 +6,16 @@
 //
 
 import Foundation
+import RxSwift
 
 final class AssetsTrayRepository : AssetsTrayRepositoryInterface {
-    func fetchGroup() {
-        //
+    func fetchGroup() -> Observable<[IAssetsGroup]> {
+        
     }
     
+    
+
+//    var temp1 : IAsset?
+
     
 }
