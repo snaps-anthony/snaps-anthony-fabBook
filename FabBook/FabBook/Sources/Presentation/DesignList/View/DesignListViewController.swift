@@ -68,7 +68,6 @@ class DesignListViewController: BaseViewController {
         // collectionview
         collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .yellow
-        collectionView.bounces = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(DesignCollectionViewCell.self, forCellWithReuseIdentifier: DesignCollectionViewCell.ID)
     }
