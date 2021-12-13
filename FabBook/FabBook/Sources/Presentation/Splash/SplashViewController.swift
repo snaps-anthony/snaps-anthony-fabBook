@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Photos
 
 class SplashViewController: BaseViewController {
 
@@ -24,6 +25,9 @@ class SplashViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        PHPhotoLibrary.requestAuthorization { status in
+            print("debug : PHPhotoLibrary requestAuthorization -> \(status)")
+        }
         goDesingListViewController()
     }
     
