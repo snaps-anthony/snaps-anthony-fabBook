@@ -30,7 +30,7 @@ final class AssetsTrayRepository : AssetsTrayRepositoryInterface {
 //    }
 //    
     
-    func fetchGroup() -> Observable<[IAssetsGroup]> {
+    func fetchGroup() -> Observable<[IAssetsGroupInterface]> {
 
         return Observable.create { emitter in
 
@@ -39,9 +39,8 @@ final class AssetsTrayRepository : AssetsTrayRepositoryInterface {
                     emitter.onError(err)
                     return
                 }
-                emitter.onNext( groups  as!  [IAssetsGroup] )
+                emitter.onNext( groups! )
                 emitter.onCompleted()
-
             }
             return Disposables.create()
         }
