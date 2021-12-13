@@ -14,6 +14,8 @@ class SplashViewController: BaseViewController {
         var lbl = UILabel()
         lbl.text = "FAB BOOK"
         lbl.font = .boldSystemFont(ofSize: 30)
+        lbl.isHidden = false
+        lbl.textColor = .black
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
@@ -28,12 +30,12 @@ class SplashViewController: BaseViewController {
     //MARK: methods
     private func configureUI(){
         view.addSubview(titleLabel)
-        titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        titleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        titleLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        titleLabel.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
     }
 
     private func goDesingListViewController(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             let controller = DesignListViewController()
             let nav = UINavigationController(rootViewController: controller)
             nav.modalPresentationStyle = .fullScreen
