@@ -116,7 +116,7 @@ class DesignListViewController: BaseViewController {
                 let policy = FabBookPolicy()
                 ProductGenerator.shared.policy = policy
                 ProductGenerator.shared.templateCode = model.templateCode
-                ProductGenerator.shared.category = DeviceAssetsGroupCategory() // 디바이스 사진들 picker
+                ProductGenerator.shared.category = DeviceAssetsGroupCategory() // 디바이스 사진 picker
                 
                 //execute PhotoPicker                
                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)

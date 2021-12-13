@@ -7,11 +7,6 @@
 
 import UIKit
 
-enum TitleViewButtonAction : Int {
-    case up
-    case close
-}
-
 class NavigationTitleView: UIView {
     let titleButton = UIButton()
     private var allConstraintsDidSetup = false
