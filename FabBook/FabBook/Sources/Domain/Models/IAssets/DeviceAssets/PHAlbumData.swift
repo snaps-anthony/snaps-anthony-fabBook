@@ -58,7 +58,6 @@ class PHAlbumData : IAssetsGroupInterface {
             album.fetchResult = fetRes
             album.albumTitle = "전체 사진"
             album.bPreFetched = false
-            
         }
         
         return album
@@ -85,7 +84,6 @@ class PHAlbumData : IAssetsGroupInterface {
             album.albumTitle = "전체 사진"
             album.bPreFetched = false
  
-            
         }
         
         return album

@@ -24,6 +24,7 @@
 		925080922767149800B89DF9 /* PHFetchResult+AssetsGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925080912767149800B89DF9 /* PHFetchResult+AssetsGroup.swift */; };
 		92508094276714B900B89DF9 /* PHFetchOptions+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92508093276714B900B89DF9 /* PHFetchOptions+Utility.swift */; };
 		92508096276714DF00B89DF9 /* PHAlbumData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92508095276714DF00B89DF9 /* PHAlbumData.swift */; };
+		925080982767521200B89DF9 /* AssetAlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925080972767521200B89DF9 /* AssetAlbumCollectionViewCell.swift */; };
 		929726FA2761DFCE006B1E7E /* FabBookPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929726F92761DFCE006B1E7E /* FabBookPolicy.swift */; };
 		929726FC2761DFE5006B1E7E /* ProductGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929726FB2761DFE5006B1E7E /* ProductGenerator.swift */; };
 		929726FF2761E1D5006B1E7E /* PolicyInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929726FE2761E1D5006B1E7E /* PolicyInterface.swift */; };
@@ -89,6 +90,7 @@
 		925080912767149800B89DF9 /* PHFetchResult+AssetsGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHFetchResult+AssetsGroup.swift"; sourceTree = "<group>"; };
 		92508093276714B900B89DF9 /* PHFetchOptions+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHFetchOptions+Utility.swift"; sourceTree = "<group>"; };
 		92508095276714DF00B89DF9 /* PHAlbumData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHAlbumData.swift; sourceTree = "<group>"; };
+		925080972767521200B89DF9 /* AssetAlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetAlbumCollectionViewCell.swift; sourceTree = "<group>"; };
 		929726F92761DFCE006B1E7E /* FabBookPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FabBookPolicy.swift; sourceTree = "<group>"; };
 		929726FB2761DFE5006B1E7E /* ProductGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGenerator.swift; sourceTree = "<group>"; };
 		929726FE2761E1D5006B1E7E /* PolicyInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyInterface.swift; sourceTree = "<group>"; };
@@ -191,8 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				929726FB2761DFE5006B1E7E /* ProductGenerator.swift */,
-				9250808D2767137600B89DF9 /* Extensions */,
 				92BA45C02762F9B400249E37 /* Utils */,
+				9250808D2767137600B89DF9 /* Extensions */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -389,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				929727002761E485006B1E7E /* AssetsTrayViewController.swift */,
+				925080972767521200B89DF9 /* AssetAlbumCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -762,6 +765,7 @@
 				925080902767147700B89DF9 /* PHAssetCollection+Utility.swift in Sources */,
 				92423C392760BF3D00A32C83 /* DesignListViewModel.swift in Sources */,
 				92D12226276052BF000F87F8 /* SplashViewController.swift in Sources */,
+				925080982767521200B89DF9 /* AssetAlbumCollectionViewCell.swift in Sources */,
 				929727032761E49F006B1E7E /* AssetsTrayViewModel.swift in Sources */,
 				929726FF2761E1D5006B1E7E /* PolicyInterface.swift in Sources */,
 				92C5DFE62761972300F0CF1F /* DesignListRepositoryInterface.swift in Sources */,
