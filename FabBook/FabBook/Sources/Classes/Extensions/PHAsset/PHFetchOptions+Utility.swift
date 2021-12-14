@@ -14,6 +14,7 @@ extension PHFetchOptions {
         let this = PHFetchOptions()
         this.predicate = NSPredicate(format: "mediaType == %d", PHAssetMediaType.image.rawValue)
         this.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)] // descendingSort
+        this.includeAssetSourceTypes = [.typeUserLibrary, .typeiTunesSynced]
         return this
     }
     
