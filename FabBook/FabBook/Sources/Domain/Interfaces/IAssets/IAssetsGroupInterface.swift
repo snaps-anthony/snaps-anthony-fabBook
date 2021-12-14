@@ -10,7 +10,6 @@ import UIKit
 
 @objc protocol IAssetsGroupInterface {
     
-    
     func numberOfAssets() -> NSNumber?
     func groupTitle() -> String?
     func groupThumnail() -> Any?

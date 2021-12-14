@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Photos
 
 class AssetAlbumCollectionViewCell : UICollectionViewCell {
     static let identifier = "AssetAlbumCollectionViewCell"
@@ -21,17 +21,25 @@ class AssetAlbumCollectionViewCell : UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
         print("debug : AssetAlbumCollectionViewCell required init " )
-        
-        backgroundColor = .blue.withAlphaComponent(0.3)
+        backgroundColor = .red.withAlphaComponent(0.3)
     }
     
     func onData(data : IAssetsGroupInterface, index:Int){
-        print("debug : AssetAlbumCollectionViewCell onData :  index -> \(index), onData -> \(data.groupTitle()), ")
+        imageView.backgroundColor = .black.withAlphaComponent(0.5)
         lbTitle.text = data.groupTitle() ?? "group title "
-        lbCount.text = "-777"
-        imageView.backgroundColor = .black
+        lbCount.text = "\(data.numberOfAssets()!.intValue)"
+        
+        let width = self.imageView.frame.size.width * UIScreen.main.scale
+        let height = self.imageView.frame.size.height * UIScreen.main.scale
+        let options = PHImageRequestOptions()
+        options.deliveryMode = .highQualityFormat
+        
+        if let thumInfo = data.groupThumnail() as? PHAsset {
+            PHImageManager.default().requestImage(for:thumInfo, targetSize: CGSize(width: width , height: height), contentMode: .aspectFill, options: options) { [weak self] image, info in
+                self?.imageView.image = image
+            }
+        }
         
     }
 }

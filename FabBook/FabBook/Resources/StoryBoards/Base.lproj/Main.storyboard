@@ -224,7 +224,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="163" height="204"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rll-xi-pvf">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rll-xi-pvf">
                                                     <rect key="frame" x="0.0" y="0.0" width="163" height="163"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Rll-xi-pvf" secondAttribute="height" multiplier="1:1" id="t9g-EL-yBd"/>

@@ -23,6 +23,10 @@ class PHAlbumData : IAssetsGroupInterface {
     
     //MARK: methods
     func numberOfAssets() -> NSNumber? {
+        if self.fetchResult == nil {
+            let fetch =  PHAsset.fetchAssets(in: self.assetCollection!, options: PHFetchOptions.imagesOptions())
+            return NSNumber(value: fetch.count)
+        }
         let ret = NSNumber(value: self.fetchResult?.count ?? 0)
         return ret
     }
@@ -32,10 +36,10 @@ class PHAlbumData : IAssetsGroupInterface {
     }
     
     func groupThumnail() -> Any? {
-        if self.bPreFetched == false {
-            self.bPreFetched = true
-            self.fetchResult = PHAsset.fetchAssets(in: self.assetCollection!, options: PHFetchOptions.imagesOptions())
-        }
+//        if self.bPreFetched == false { // TODO: bPreFetching
+//            self.bPreFetched = true
+//            self.fetchResult = PHAsset.fetchAssets(in: self.assetCollection!, options: PHFetchOptions.imagesOptions())
+//        }
         return fetchResult?.firstObject
     }
     
@@ -47,7 +51,7 @@ class PHAlbumData : IAssetsGroupInterface {
             let assetCollection = collectionList as! PHAssetCollection
             
             album.assetCollection = assetCollection
-            album.fetchResult = nil
+            album.fetchResult = PHAsset.fetchAssets(in: assetCollection, options: PHFetchOptions.imagesOptions())
             album.albumTitle = assetCollection.localizedTitle
             album.bPreFetched = false
             
@@ -70,9 +74,11 @@ class PHAlbumData : IAssetsGroupInterface {
             let assetCollection = collectionList as! PHAssetCollection
             album.assetCollection = assetCollection
             album.fetchResult = nil
-            if bPreFetching {
-                album.fetchResult = PHAsset.fetchAssets(in: assetCollection, options: PHFetchOptions.imagesOptions())
-            }
+            // TODO: bPreFetching
+//            if bPreFetching {
+//                album.fetchResult = PHAsset.fetchAssets(in: assetCollection, options: PHFetchOptions.imagesOptions())
+//            }
+            album.fetchResult = PHAsset.fetchAssets(in: assetCollection, options: PHFetchOptions.imagesOptions())
             album.albumTitle = assetCollection.localizedTitle
             album.bPreFetched = bPreFetching
             
