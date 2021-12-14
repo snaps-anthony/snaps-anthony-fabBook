@@ -25,6 +25,7 @@
 		92508094276714B900B89DF9 /* PHFetchOptions+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92508093276714B900B89DF9 /* PHFetchOptions+Utility.swift */; };
 		92508096276714DF00B89DF9 /* PHAlbumData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92508095276714DF00B89DF9 /* PHAlbumData.swift */; };
 		925080982767521200B89DF9 /* AssetAlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925080972767521200B89DF9 /* AssetAlbumCollectionViewCell.swift */; };
+		9277C1ED2768864E00932841 /* AssetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9277C1EC2768864E00932841 /* AssetCollectionViewCell.swift */; };
 		929726FA2761DFCE006B1E7E /* FabBookPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929726F92761DFCE006B1E7E /* FabBookPolicy.swift */; };
 		929726FC2761DFE5006B1E7E /* ProductGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929726FB2761DFE5006B1E7E /* ProductGenerator.swift */; };
 		929726FF2761E1D5006B1E7E /* PolicyInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929726FE2761E1D5006B1E7E /* PolicyInterface.swift */; };
@@ -91,6 +92,7 @@
 		92508093276714B900B89DF9 /* PHFetchOptions+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHFetchOptions+Utility.swift"; sourceTree = "<group>"; };
 		92508095276714DF00B89DF9 /* PHAlbumData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHAlbumData.swift; sourceTree = "<group>"; };
 		925080972767521200B89DF9 /* AssetAlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetAlbumCollectionViewCell.swift; sourceTree = "<group>"; };
+		9277C1EC2768864E00932841 /* AssetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewCell.swift; sourceTree = "<group>"; };
 		929726F92761DFCE006B1E7E /* FabBookPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FabBookPolicy.swift; sourceTree = "<group>"; };
 		929726FB2761DFE5006B1E7E /* ProductGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGenerator.swift; sourceTree = "<group>"; };
 		929726FE2761E1D5006B1E7E /* PolicyInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyInterface.swift; sourceTree = "<group>"; };
@@ -392,6 +394,7 @@
 			children = (
 				929727002761E485006B1E7E /* AssetsTrayViewController.swift */,
 				925080972767521200B89DF9 /* AssetAlbumCollectionViewCell.swift */,
+				9277C1EC2768864E00932841 /* AssetCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -777,6 +780,7 @@
 				929726FC2761DFE5006B1E7E /* ProductGenerator.swift in Sources */,
 				92BA45ED27634B2900249E37 /* IAssetsGroupCategoryInterface.swift in Sources */,
 				92423C372760BF2A00A32C83 /* DesignListViewController.swift in Sources */,
+				9277C1ED2768864E00932841 /* AssetCollectionViewCell.swift in Sources */,
 				92D12224276052BF000F87F8 /* SceneDelegate.swift in Sources */,
 				929727012761E485006B1E7E /* AssetsTrayViewController.swift in Sources */,
 				92423C3F2760D05F00A32C83 /* DesignCollectionViewCell.swift in Sources */,
