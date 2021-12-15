@@ -24,7 +24,10 @@ class AssetAlbumCollectionViewCell : UICollectionViewCell {
         print("debug : AssetAlbumCollectionViewCell required init " )
         backgroundColor = .red.withAlphaComponent(0.3)
     }
-    
+    override func prepareForReuse() {
+        self.imageView.image = nil
+        // indicator
+    }
     func onData(data : IAssetsGroupInterface, index:Int){
         imageView.backgroundColor = .black.withAlphaComponent(0.5)
         lbTitle.text = data.groupTitle() ?? "group title "

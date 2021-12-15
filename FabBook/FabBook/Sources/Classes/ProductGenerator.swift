@@ -20,4 +20,5 @@ class ProductGenerator {
     var paperCode : String?
     var category : IAssetsGroupCategoryInterface! // 앨범을 어디서 불러올것인가 : 디바이스, 구글, ...
     
+    var selectedAssets = [[String:Any]]()
 }

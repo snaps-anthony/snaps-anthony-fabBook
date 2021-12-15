@@ -7,6 +7,7 @@
 
 import UIKit
 import Photos
+import RxSwift
 
 class AssetCollectionViewCell : UICollectionViewCell {
     
@@ -23,6 +24,9 @@ class AssetCollectionViewCell : UICollectionViewCell {
     
     private var imageView: UIImageView?
     var loadCompleteAsset: Bool = false
+    var _isChecked : Bool? = nil
+    var _cellAsset : PHAsset? = nil
+    var _isEnable : Bool? = nil
     
     //MARK: initialize
     required init?(coder: NSCoder) {
@@ -43,11 +47,35 @@ class AssetCollectionViewCell : UICollectionViewCell {
         super.prepareForReuse()
         self.imageView?.image = nil
         loadCompleteAsset = false
-        print("debug : AssetCollectionViewCell prepareForReuse " )
+//        print("debug : AssetCollectionViewCell prepareForReuse " )
+        self._isChecked = nil
+        self._cellAsset = nil
+        self._isEnable = nil
     }
     
     //MARK: methods
-    func onData(data asset : PHAsset){
+    
+    func setChecked(_ isChecked: Bool) {
+        self.checkOnlyOn.isHidden = !isChecked
+    }
+    
+    func setEnableResolution(_ isEnable: Bool) {
+        viewEnableResolution.isHidden = isEnable
+
+    }
+    
+    func setAlreadySelected(_ alreadySelected: Bool) {
+        viewAlreadySelected.isHidden = alreadySelected
+    }
+    
+//    func getCellInfo() -> [String:Any] {
+//        var infoDic = [String:Any]()
+//        infoDic["asset"] = self._cellAsset!
+//        infoDic["checkSelect"] = self._isChecked!
+//        infoDic["isEnable"] = self._isEnable!
+//        return infoDic
+//    }
+    func onData(asset : PHAsset){
         self.imageView = self.viewWithTag(15) as? UIImageView ?? nil
         if self.imageView == nil {
             self.imageView = UIImageView(frame: self.bounds)
@@ -62,14 +90,6 @@ class AssetCollectionViewCell : UICollectionViewCell {
         self.getAssetThumbnail(asset: asset )
     }
     
-    func setChecked(){
-        
-    }
-    
-    func setEnableResolution(){
-        
-    }
-    
     func getAssetThumbnail(asset: PHAsset) {
         let manager = PHImageManager.default()
         let option = PHImageRequestOptions()
@@ -82,27 +102,17 @@ class AssetCollectionViewCell : UICollectionViewCell {
                 self.imageView?.image = result
             }
         })
+    }
+    
+    func updateCheckStatus( completion: @escaping(Bool, Bool)-> Void) {
+        let currentCheckStatus = !self.checkOnlyOn.isHidden // status와 hidden은 반대관계
+        let newStatus = !currentCheckStatus
+        self.checkOnlyOn.isHidden = !newStatus // status와 hidden은 반대관계
+        let isEnable = true
+        completion(newStatus, isEnable)
+    }
+    
+    func updateCheckStatus(newStatus:Bool){
         
-//        let options = PHImageRequestOptions()
-//        options.deliveryMode = .highQualityFormat
-//        options.isNetworkAccessAllowed = true
-//        options.isSynchronous = false
-//        options.version = .current
-//        options.progressHandler = {
-//            (progress, error, stop, info) in
-//            gzprintFunc("prgress" + String(progress))
-//        }
-//        if #available(iOS 13, *) {
-//            PHImageManager.default().requestImageDataAndOrientation(for: asset, options: options) { (imageData, dataUTI, orientation, info) in
-//                if let imageData = imageData {
-//                    self.phAssetDataLoaded(imageData)
-//                }
-//            }
-//        }
-//        else {
-//            PHImageManager.default().requestImageData(for: asset, options: options) { (imageData, dataUTI, orientation, info) in
-//                self.phAssetDataLoaded(imageData)
-//            }
-//        }
     }
 }
