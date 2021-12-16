@@ -136,7 +136,7 @@ class AssetsTrayViewController: BaseViewController {
 
                 let asset = item["asset"] as! IAssetInterface
                 let checkSelect = viewModel.getIsSelectedAssetCell(asset: asset)
-                let isEnableResolution = item["isEnable"] as! Bool // let isEnableResolution = viewModel.getIsEnableAssetCell(asset: asset)
+                let isEnableResolution = viewModel.getIsEnableResolutionCell(asset: asset)
                 
                 cell.onData(asset: asset)
                 cell.setChecked(checkSelect)
@@ -152,7 +152,6 @@ class AssetsTrayViewController: BaseViewController {
         Observable.zip( assetsCollectionView.rx.itemSelected, assetsCollectionView.rx.modelSelected([String:Any].self))
 //            .throttle(.milliseconds(300), latest: false, scheduler: MainScheduler.instance)
             .bind{ [weak self] indexPath, model in
-//                let asset = model["asset"] as! PHAsset
                 self?.didClickAssetCollectionViewCell(cellIndex: indexPath)
             }
             .disposed(by: self.disposeBag)
@@ -168,7 +167,6 @@ class AssetsTrayViewController: BaseViewController {
         // trayCollcetionView data binding
         viewModel.selectedAssetsSubject
             .bind(to: trayCollectionView.rx.items(cellIdentifier: TrayCollectionViewCell.identifier, cellType: TrayCollectionViewCell.self)) { index, item, cell in
-//                let asset = item["asset"] as! PHAsset
                 let asset = item["asset"] as! IAssetInterface
                 cell.onData(asset)
             }.disposed(by: self.disposeBag)
@@ -224,7 +222,6 @@ class AssetsTrayViewController: BaseViewController {
     func didClickAssetCollectionViewCell(cellIndex: IndexPath){
         guard let clickedCell = self.assetsCollectionView.cellForItem(at: cellIndex) as? AssetCollectionViewCell else {return}
         if clickedCell.loadCompleteAsset {
-//            self.viewModel.didTapAssetsCollectionViewlCell(cellindex: cellIndex, cellAsset:cellInfo)
             self.viewModel.didTapAssetsCollectionViewlCell(cellindex: cellIndex)
         }
     }

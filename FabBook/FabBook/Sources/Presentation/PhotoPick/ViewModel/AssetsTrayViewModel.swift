@@ -75,7 +75,7 @@ class AssetsTrayViewModel {
                 dic["asset"] = asset
                 dic["checkSelect"] = getIsSelectedAssetCell(asset:asset)
                 // 딕셔너리 배열에 담는다
-                dic["isEnable"] = getIsEnableResolution(asset: asset)
+                dic["isEnable"] = getIsEnableResolutionCell(asset: asset)
                 // isEnable
                 ret.append(dic)
             }
@@ -84,7 +84,7 @@ class AssetsTrayViewModel {
         
     }
     
-    func getIsEnableResolution(asset : IAssetInterface) -> Bool {
+    func getIsEnableResolutionCell(asset : IAssetInterface) -> Bool {
         
         return true
     }
@@ -167,7 +167,7 @@ class AssetsTrayViewModel {
         //TODO: _generator.policy.assetsListType() 에 따른 로직 분기처리
         
         let copyAsset = cellAsset
-        let copyIsEnable = getIsEnableResolution(asset: cellAsset)
+        let copyIsEnable = getIsEnableResolutionCell(asset: cellAsset)
         var newCellInfo = [String:Any]()
         
         newCellInfo["asset"] = copyAsset
