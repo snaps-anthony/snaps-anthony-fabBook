@@ -20,10 +20,6 @@ protocol IAssetInterface  {
     var numberOfReplies : UInt? { get set }
     var numberOfFeeling : UInt? { get set }
     var assetID : String? { get set }
-    
-//    func copyToSource(source: Source)
-//    func dateToTextList(testList : TextList)
-    
     func cancelImageLoad(imageView: UIImageView)
     func insertThumbnail(imageView : UIImageView, wamtSize : CGSize)
     func insertThumbnail(imageView : UIImageView, wamtSize : CGSize, finished: @escaping()->Void  )

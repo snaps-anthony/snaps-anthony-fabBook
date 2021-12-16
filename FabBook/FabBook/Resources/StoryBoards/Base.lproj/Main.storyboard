@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -65,7 +65,7 @@
                                     <inset key="sectionInset" minX="8" minY="12" maxX="8" maxY="12"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TrayCollectionViewCell" id="fkZ-fw-OWC">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TrayCollectionViewCell" id="fkZ-fw-OWC" customClass="TrayCollectionViewCell" customModule="FabBook" customModuleProvider="target">
                                         <rect key="frame" x="8" y="13.5" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -92,8 +92,8 @@
                                         </constraints>
                                         <size key="customSize" width="60" height="60"/>
                                         <connections>
-                                            <outlet property="btn_X" destination="gcO-LJ-Rwd" id="6Iw-4C-eP0"/>
-                                            <outlet property="containerView" destination="K6H-3Z-1ZP" id="CBr-sx-JFg"/>
+                                            <outlet property="containerView" destination="K6H-3Z-1ZP" id="W9g-KD-ier"/>
+                                            <outlet property="deleteBtn" destination="gcO-LJ-Rwd" id="9Js-E5-Fy4"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

@@ -9,16 +9,13 @@ import UIKit
 import Photos
 
 class AssetAlbumCollectionViewCell : UICollectionViewCell {
+    //MARK: properties
     static let identifier = "AssetAlbumCollectionViewCell"
-    
     @IBOutlet weak var lbTitle: UILabel!
-    
     @IBOutlet weak var lbCount: UILabel!
-    
     @IBOutlet weak var imageView: UIImageView!
     
-
-    
+    //MARK: initialize
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         print("debug : AssetAlbumCollectionViewCell required init " )
@@ -28,6 +25,7 @@ class AssetAlbumCollectionViewCell : UICollectionViewCell {
         self.imageView.image = nil
         // indicator
     }
+    //MARK: methods
     func onData(data : IAssetsGroupInterface, index:Int){
         imageView.backgroundColor = .black.withAlphaComponent(0.5)
         lbTitle.text = data.groupTitle() ?? "group title "

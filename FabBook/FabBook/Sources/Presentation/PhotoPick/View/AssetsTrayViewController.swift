@@ -48,15 +48,10 @@ class AssetsTrayViewController: BaseViewController {
     //MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
         activityIndicator.isHidden = true
         setupNavigationItems()
-        
         setupBindings()
-//        viewModel.groupsFetching.onNext(()) //  FethGroups
         viewModel.fetchGroups()
-
-    
     }
     
     
@@ -131,7 +126,6 @@ class AssetsTrayViewController: BaseViewController {
         // groupsCollectionView select
         Observable.zip( groupsCollectionView.rx.itemSelected, groupsCollectionView.rx.modelSelected(IAssetsGroupInterface.self))
             .bind{ [weak self] indexPath, model in
-                print("debug : groupsCollectionViewCell clicked -> index : \(indexPath)")
                 self?.viewModel.didTapGroupCollectionViewCell(cellInfo: ["indexPath":indexPath, "selectedGroup":model])
             }
             .disposed(by: disposeBag)
@@ -140,7 +134,6 @@ class AssetsTrayViewController: BaseViewController {
         viewModel.fetchAssetReultSubject
             .bind(to: assetsCollectionView.rx.items(cellIdentifier: AssetCollectionViewCell.identifier, cellType: AssetCollectionViewCell.self)) { [unowned self] indexPath, item, cell in
 
-                //TODO: 최신데이터 받아오기 구현
                 let asset = item["asset"] as! PHAsset
                 let checkSelect = viewModel.getIsSelectedAssetCell(asset: asset)
                 let isEnableResolution = item["isEnable"] as! Bool // let isEnableResolution = viewModel.getIsEnableAssetCell(asset: asset)
@@ -149,15 +142,7 @@ class AssetsTrayViewController: BaseViewController {
                 cell.setChecked(checkSelect)
                 cell.setEnableResolution(isEnableResolution)
                 cell.btnCheckSelect.indexPath = IndexPath(item: indexPath, section: 0)
-                
-                if indexPath == 0 {
-                    self.disposeThrottleBag = DisposeBag()
-                }
-                cell.btnCheckSelect.rx.tap.asDriver().throttle(.milliseconds(300), latest: false) // 0.5초
-                    .drive { (_) in
-                        print("debug : assets cell btnCheckSelect tapped")
-                        self.didClickAssetCollectionViewCell(cellIndex: IndexPath(item: indexPath, section: 0), cellInfo: asset)
-                    }.disposed(by: self.disposeThrottleBag)
+                cell.btnCheckSelect.addTarget(self, action: #selector(didClickAssetCellCheckBtn(_:)), for: .touchUpInside)
             }.disposed(by: self.disposeBag)
         
         // assetCollectionView  flowlayout
@@ -165,34 +150,43 @@ class AssetsTrayViewController: BaseViewController {
         
         // assetCollectionView select
         Observable.zip( assetsCollectionView.rx.itemSelected, assetsCollectionView.rx.modelSelected([String:Any].self))
-            .throttle(.milliseconds(300), latest: false, scheduler: MainScheduler.instance)
+//            .throttle(.milliseconds(300), latest: false, scheduler: MainScheduler.instance)
             .bind{ [weak self] indexPath, model in
-                print("debug : assets cell tapped")
-                let asset = model["asset"] as! PHAsset
-                self?.didClickAssetCollectionViewCell(cellIndex: indexPath, cellInfo: asset)
+//                let asset = model["asset"] as! PHAsset
+                self?.didClickAssetCollectionViewCell(cellIndex: indexPath)
             }
             .disposed(by: self.disposeBag)
         
-        //
+        // 선택된 assetCollectionViewCell의 checked/unchecked 업데이트
         viewModel.selectUpdateAssetResult
             .subscribe { [weak self]  cellIndex, selectStatus in
-                // assetsCollectionView selection
-                let assetCell = self?.assetsCollectionView.cellForItem(at: cellIndex) as! AssetCollectionViewCell
-                assetCell.setChecked(selectStatus)
+                if let visibleCell = self?.assetsCollectionView.cellForItem(at: cellIndex) as? AssetCollectionViewCell{
+                    visibleCell.setChecked(selectStatus)
+                }
             }.disposed(by: self.disposeBag)
-
         
         // trayCollcetionView data binding
-//        viewModel.selectedAssetsSubject
-//            .bind
+        viewModel.selectedAssetsSubject
+            .bind(to: trayCollectionView.rx.items(cellIdentifier: TrayCollectionViewCell.identifier, cellType: TrayCollectionViewCell.self)) { index, item, cell in
+                let asset = item["asset"] as! PHAsset
+                cell.onData(asset)
+            }.disposed(by: self.disposeBag)
+        
+        // trayCollcetionView select
+        Observable.zip( trayCollectionView.rx.itemSelected, trayCollectionView.rx.modelSelected([String:Any].self))
+//            .throttle(.milliseconds(300), latest: false, scheduler: MainScheduler.instance)
+            .bind{ [weak self] indexPath, model in
+                self?.viewModel.didTapTrayCollectionViewCell(cellindex: indexPath)
+            }
+            .disposed(by: self.disposeBag)
         
         // taryCollectionView scroll,
         viewModel.lastUpdatedTrayCollectionvCellIndexSubject.subscribe { tayScrollIndex in
             // taryCollectionView scroll
         }.disposed(by: self.disposeBag)
-
         
-        
+        // trayCollectionView  flowlayout
+        trayCollectionView.rx.setDelegate(self).disposed(by: self.disposeBag)
     }
     
     @objc func didClickLeftBackButton(){
@@ -213,10 +207,23 @@ class AssetsTrayViewController: BaseViewController {
         viewModel.didTapNavigationTitleView()
     }
     
-    func didClickAssetCollectionViewCell(cellIndex: IndexPath, cellInfo : PHAsset){
+    @objc func didClickAssetCellCheckBtn(_ sender: Any){
+        
+        if let btnView = sender as? UIButton {
+            if let cell = btnView.superview?.superview as? AssetCollectionViewCell {
+                if cell.loadCompleteAsset {
+                    let indexPath = btnView.indexPath!
+                    self.viewModel.didTapAssetsCollectionViewlCell(cellindex: indexPath)
+                }
+            }
+        }
+    }
+    
+    func didClickAssetCollectionViewCell(cellIndex: IndexPath){
         guard let clickedCell = self.assetsCollectionView.cellForItem(at: cellIndex) as? AssetCollectionViewCell else {return}
         if clickedCell.loadCompleteAsset {
-            self.viewModel.didTapAssetsCollectionViewlCell(cellindex: cellIndex, cellAsset:cellInfo)
+//            self.viewModel.didTapAssetsCollectionViewlCell(cellindex: cellIndex, cellAsset:cellInfo)
+            self.viewModel.didTapAssetsCollectionViewlCell(cellindex: cellIndex)
         }
     }
 }

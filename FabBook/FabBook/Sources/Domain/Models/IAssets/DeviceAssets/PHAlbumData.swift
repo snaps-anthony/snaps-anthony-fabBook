@@ -14,6 +14,54 @@ enum AlbumType:Int {
 }
 
 class PHAlbumData : IAssetsGroupInterface {
+    func assetAtIndex(index: Int) -> IAssetInterface? {
+        //
+        return nil
+    }
+    
+    func indexOfAsset(asset: IAssetInterface) -> Int? {
+        //
+        return nil
+    }
+    
+    func enumerateAssetsUsingBlock(block: @escaping (IAssetInterface, Int, Bool) -> Void) {
+        //
+    }
+    
+    func hasLoadmoreItems() -> Bool {
+        //
+        return false
+    }
+    
+    func cancelPosterLoad(imageView: UIImageView) {
+        //
+    }
+    
+    func insertPoster(imageView: UIImageView) {
+        //
+    }
+    
+    func loadAssetLists(finished: @escaping (Error?) -> Void) {
+        //
+    }
+    
+    func numberOfLoadedAssets() -> UInt {
+        //
+        return 0
+    }
+    
+    func startCachingAssetsForIndexes(indexes: [NSNumber], wantSize: CGSize) {
+        //
+    }
+    
+    func stopCachingAssetsForIndexess(indexes: [NSNumber], wantSize: CGSize) {
+        //
+    }
+    
+    func stopCachingAllAssets() {
+        //
+    }
+    
     
     //MARK: properties
     var fetchResult : PHFetchResult<PHAsset>? = nil

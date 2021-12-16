@@ -47,7 +47,6 @@ class AssetCollectionViewCell : UICollectionViewCell {
         super.prepareForReuse()
         self.imageView?.image = nil
         loadCompleteAsset = false
-//        print("debug : AssetCollectionViewCell prepareForReuse " )
         self._isChecked = nil
         self._cellAsset = nil
         self._isEnable = nil

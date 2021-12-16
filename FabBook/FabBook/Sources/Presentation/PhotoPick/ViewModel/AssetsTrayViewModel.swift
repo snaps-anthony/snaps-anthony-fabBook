@@ -69,7 +69,6 @@ class AssetsTrayViewModel {
             
             // PHAssetFetchResult<PHAsset>를 딕셔너리 배열로 변환
             for assetIdx in 0..<result.count {
-                print("debug : assetIdx -> \(assetIdx)")
                 // PHAsset을 딕셔너리로 변환
                 var dic = [String:Any]()
                 let asset = result[assetIdx]
@@ -120,10 +119,13 @@ class AssetsTrayViewModel {
         groupSelectionStatus.on(.next(.postGroupSelected))
     }
     
-    // 사진 선택 처리
-    func didTapAssetsCollectionViewlCell(cellindex: IndexPath, cellAsset : PHAsset) {
+    // asset 사진 선택 처리
+    func didTapAssetsCollectionViewlCell(cellindex: IndexPath) {
         print("debug : assetCollectionView clicked -> cellindex:\(cellindex)")
     
+        
+        guard let fetchedAssets = try? fetchAssetReultSubject.value() else { return }
+        let cellAsset = fetchedAssets[cellindex.item]["asset"] as! PHAsset
         
         // 체크설정인지 체크 해제인지 판별
         let isSelectedCell = getIsSelectedAssetCell(asset:cellAsset)
@@ -144,13 +146,21 @@ class AssetsTrayViewModel {
         }
         else // 현재체크 -> 체크취소 : 체크 해제
         {
-            deselectAssetEvent(cellindex: cellindex, cellAsset: cellAsset)
+            deselectAssetEvent(cellAsset: cellAsset)
         }
-        
         //emit event
-        selectedAssetsSubject.on(.next( ProductGenerator.shared.selectedAssets))
-        selectedAssetCountSubject.on(.next(ProductGenerator.shared.selectedAssets.count))
+        selectedAssetsSubject.on(.next( ProductGenerator.shared.selectedAssets))            // 선택된 사진리스트
+        selectedAssetCountSubject.on(.next(ProductGenerator.shared.selectedAssets.count)) // 선택된 사진 갯수
         
+    }
+    
+    // tray 사진 선택 처리
+    func didTapTrayCollectionViewCell(cellindex : IndexPath) {
+        let cellInfo = ProductGenerator.shared.selectedAssets[cellindex.item]
+        let cellAsset = cellInfo["asset"] as! PHAsset
+        deselectAssetEvent( cellAsset: cellAsset)
+        selectedAssetsSubject.on(.next( ProductGenerator.shared.selectedAssets))            // 선택된 사진리스트
+        selectedAssetCountSubject.on(.next(ProductGenerator.shared.selectedAssets.count)) // 선택된 사진 갯수
     }
     
     func selectAssetEvent( cellindex: IndexPath, cellAsset :PHAsset) {
@@ -165,19 +175,15 @@ class AssetsTrayViewModel {
         newCellInfo["isEnable"] = copyIsEnable
         
         ProductGenerator.shared.selectedAssets.append(newCellInfo)
+        selectUpdateAssetResult.on(.next((cellindex, true))) // 선택된 cell의 checked update
         
-        selectUpdateAssetResult.on(.next((cellindex, true)))
-//        print("debug : ProductGenerator.shared.selectedAssets insert")
-//        dump(ProductGenerator.shared.selectedAssets)
-//        print("")
-        
-        let lastIndex = ProductGenerator.shared.selectedAssets.count - 1
-        lastUpdatedTrayCollectionvCellIndexSubject.on(.next(lastIndex))
+//        let lastIndex = ProductGenerator.shared.selectedAssets.count - 1
+//        lastUpdatedTrayCollectionvCellIndexSubject.on(.next(lastIndex))
     }
     
-    func deselectAssetEvent(cellindex: IndexPath, cellAsset : PHAsset)  {
+    func deselectAssetEvent(cellAsset : PHAsset)  {
         //TODO: _generator.policy.assetsListType() 에 따른 로직 분기처리
-        var idx = 0
+        var idxInselectedAssets = 0
         let currentSelecteddAssets = ProductGenerator.shared.selectedAssets
 
         for selectedAssetDic in currentSelecteddAssets {
@@ -185,23 +191,36 @@ class AssetsTrayViewModel {
             if selectedAsset.localIdentifier == cellAsset.localIdentifier {
                 break
             }
-            idx += 1
+            idxInselectedAssets += 1
         }
-        ProductGenerator.shared.selectedAssets.remove(at: idx)
-        selectUpdateAssetResult.on(.next((cellindex, false)))
-        print("debug : ProductGenerator.shared.selectedAssets removw")
-        dump(ProductGenerator.shared.selectedAssets)
-        print("")
+        ProductGenerator.shared.selectedAssets.remove(at: idxInselectedAssets)
         
-        // lastIndex
-        if ProductGenerator.shared.selectedAssets.count == 0 {
-            // no scroll move animation
-            return
+        
+        var idxInFetchedAssets = 0
+        guard let fetchedAssets = try? fetchAssetReultSubject.value() else { return }
+        for fetchedAsset in fetchedAssets {
+            let fetchedAssetData = fetchedAsset["asset"] as! PHAsset
+            if fetchedAssetData.localIdentifier == cellAsset.localIdentifier {
+                break
+            }
+            idxInFetchedAssets += 1
+        }
+        
+        if idxInFetchedAssets >= fetchedAssets.count {
+            // 현재 fetchedAsset에서 찾지못함
         }
         else {
-            let lastIndex = idx > 0 ? idx-1 : 0
-            lastUpdatedTrayCollectionvCellIndexSubject.on(.next(lastIndex))
+            selectUpdateAssetResult.on(.next((IndexPath(item: idxInFetchedAssets, section: 0), false))) // 선택된 cell의 unchecked update
         }
+//        // lastIndex
+//        if ProductGenerator.shared.selectedAssets.count == 0 {
+//            // no scroll move animation
+//            return
+//        }
+//        else {
+//            let lastIndex = idx > 0 ? idx-1 : 0
+////            lastUpdatedTrayCollectionvCellIndexSubject.on(.next(lastIndex))
+//        }
         
     }
     
