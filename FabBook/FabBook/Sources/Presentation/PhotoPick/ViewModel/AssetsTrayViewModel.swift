@@ -224,6 +224,10 @@ class AssetsTrayViewModel {
         
     }
     
+    func removeAllSelectedAssets() {
+        ProductGenerator.shared.selectedAssets.removeAll()
+    }
+    
     
 //    func getSelectedAssetSaveArr() -> [PhotoListObject]? {
 //

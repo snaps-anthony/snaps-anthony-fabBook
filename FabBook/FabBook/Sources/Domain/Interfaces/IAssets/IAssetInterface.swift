@@ -10,15 +10,15 @@ import UIKit
 protocol IAssetInterface  {
     
     var thumbnailURL : URL? { get  }
-    var schemeThumbnailURLString : String? { get  }
-    var schemeThumbnailURLStringForSwift : String? { get  }
+//    var schemeThumbnailURLString : String? { get  }
+//    var schemeThumbnailURLStringForSwift : String? { get  }
     var originalURL : URL? { get  }
-    var size : CGSize? { get  }
+    var size : CGSize { get  }
     var best : UInt? { get  }
     var replies : [Any]? { get  }
     var feeling : [Any]? { get  }
-    var numberOfReplies : UInt? { get  }
-    var numberOfFeeling : UInt? { get  }
+    var numberOfReplies : UInt { get  }
+    var numberOfFeeling : UInt { get  }
     var assetID : String { get }
     func cancelImageLoad(imageView: UIImageView)
     func insertThumbnail(imageView : UIImageView, wamtSize : CGSize)

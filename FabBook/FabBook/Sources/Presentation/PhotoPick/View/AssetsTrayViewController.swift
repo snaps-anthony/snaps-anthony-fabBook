@@ -192,6 +192,7 @@ class AssetsTrayViewController: BaseViewController {
     @objc func didClickLeftBackButton(){
         print("debug : didClickLeftBackButton ")
         if let currentViewStatus = try? viewModel.groupSelectionStatus.value(), currentViewStatus == .preGroupSelected {
+            viewModel.removeAllSelectedAssets()
             navigationController?.popViewController(animated: true)
         }else {
             viewModel.groupSelectionStatus.on(.next(.preGroupSelected))

@@ -57,6 +57,7 @@
 		92E38C72276AE03300FAADA3 /* PhotoListObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E38C71276AE03300FAADA3 /* PhotoListObject.swift */; };
 		92E38C74276AE13400FAADA3 /* PHAsset+IAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E38C73276AE13400FAADA3 /* PHAsset+IAsset.swift */; };
 		92E38C76276B193A00FAADA3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E38C75276B193A00FAADA3 /* Constants.swift */; };
+		92E38C7A276B341200FAADA3 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E38C79276B341200FAADA3 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,7 @@
 		92E38C71276AE03300FAADA3 /* PhotoListObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListObject.swift; sourceTree = "<group>"; };
 		92E38C73276AE13400FAADA3 /* PHAsset+IAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHAsset+IAsset.swift"; sourceTree = "<group>"; };
 		92E38C75276B193A00FAADA3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		92E38C79276B341200FAADA3 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		AF00DE8E7F9ACB105EB54B67 /* Pods-FabBookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FabBookTests.release.xcconfig"; path = "Target Support Files/Pods-FabBookTests/Pods-FabBookTests.release.xcconfig"; sourceTree = "<group>"; };
 		B7FE902B8BC482C8B0AF4099 /* Pods_FabBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FabBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC6BE3E5ADABF11A8A1EF6EF /* Pods_FabBookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FabBookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -378,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				92E38C6D27698B9D00FAADA3 /* UIButton.swift */,
+				92E38C79276B341200FAADA3 /* Date.swift */,
 				9250808E2767143900B89DF9 /* PHAsset */,
 			);
 			path = Extensions;
@@ -827,6 +830,7 @@
 				92C5DFE2276193FD00F0CF1F /* HttpManager.swift in Sources */,
 				92508096276714DF00B89DF9 /* PHAlbumData.swift in Sources */,
 				92BA45F027634B9500249E37 /* DeviceAssetsGroupCategory.swift in Sources */,
+				92E38C7A276B341200FAADA3 /* Date.swift in Sources */,
 				925080892766F3A500B89DF9 /* IAssetsGroupInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

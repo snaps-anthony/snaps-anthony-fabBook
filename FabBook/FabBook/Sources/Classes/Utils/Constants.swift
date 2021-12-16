@@ -7,5 +7,5 @@
 
 import Foundation
 
-
-
+// 앨범선택 (gubun)
+let MY_DEVICE_ALBUM_SELECTED = "my_device_album_selected"

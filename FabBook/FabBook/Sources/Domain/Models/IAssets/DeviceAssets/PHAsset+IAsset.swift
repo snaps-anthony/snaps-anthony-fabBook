@@ -9,24 +9,21 @@ import Photos
 import UIKit
 
 extension PHAsset : IAssetInterface {
+    
+    var assetID: String {
+        return self.localIdentifier
+    }
+    
     var thumbnailURL: URL? {
         return nil
     }
     
-    var schemeThumbnailURLString: String? {
-        return nil
-    }
-    
-    var schemeThumbnailURLStringForSwift: String? {
-        return nil
-    }
-    
     var originalURL: URL? {
-        return nil
+        return URL(string: self.localIdentifier)
     }
     
-    var size: CGSize? {
-        return nil
+    var size: CGSize {
+        return CGSize(width: self.pixelWidth, height: self.pixelHeight)
     }
     
     var best: UInt? {
@@ -41,16 +38,12 @@ extension PHAsset : IAssetInterface {
         return nil
     }
     
-    var numberOfReplies: UInt? {
-        return nil
+    var numberOfReplies: UInt {
+        return 0
     }
     
-    var numberOfFeeling: UInt? {
-        return nil
-    }
-    
-    var assetID: String {
-        return self.localIdentifier
+    var numberOfFeeling: UInt {
+        return 0
     }
     
     func cancelImageLoad(imageView: UIImageView) {
@@ -70,7 +63,18 @@ extension PHAsset : IAssetInterface {
     }
     
     func exportPhotoListObject() -> PhotoListObject {
-        return PhotoListObject()
+        let photoListObj =  PhotoListObject()
+        photoListObj.photoId = self.assetID
+        photoListObj.media_url = self.assetID
+        photoListObj.media_thumbnail_url = self.assetID
+        photoListObj.gubun = MY_DEVICE_ALBUM_SELECTED
+        photoListObj.modifyDate = self.modificationDate?.toString(format: "yyyy-MM-dd HH:mm:SS")
+        photoListObj.logz_media_subtypes = self.mediaSubtypes.rawValue
+        photoListObj.logz_imgWidth = Float(self.pixelWidth)
+        photoListObj.logz_imgHeight = Float(self.pixelHeight)
+        photoListObj.orgFileName = "noname"
+        photoListObj.created_at = self.creationDate
+        return photoListObj
     }
 
 }
