@@ -349,7 +349,7 @@
 		9250808A2767070F00B89DF9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				92E38C78276B1A3400FAADA3 /* ProductGenerator */,
+				92E38C78276B1A3400FAADA3 /* ProductGenerate */,
 				92BA45E1276343D400249E37 /* Policies */,
 				92BA45F127635CE500249E37 /* Design */,
 				9250808B276707FE00B89DF9 /* IAssets */,
@@ -542,12 +542,12 @@
 			path = ProductGenrator;
 			sourceTree = "<group>";
 		};
-		92E38C78276B1A3400FAADA3 /* ProductGenerator */ = {
+		92E38C78276B1A3400FAADA3 /* ProductGenerate */ = {
 			isa = PBXGroup;
 			children = (
 				92E38C71276AE03300FAADA3 /* PhotoListObject.swift */,
 			);
-			path = ProductGenerator;
+			path = ProductGenerate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
