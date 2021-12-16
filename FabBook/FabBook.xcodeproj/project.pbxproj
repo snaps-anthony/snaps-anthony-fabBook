@@ -56,6 +56,7 @@
 		92E38C70276AD39D00FAADA3 /* TrayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E38C6F276AD39D00FAADA3 /* TrayCollectionViewCell.swift */; };
 		92E38C72276AE03300FAADA3 /* PhotoListObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E38C71276AE03300FAADA3 /* PhotoListObject.swift */; };
 		92E38C74276AE13400FAADA3 /* PHAsset+IAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E38C73276AE13400FAADA3 /* PHAsset+IAsset.swift */; };
+		92E38C76276B193A00FAADA3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E38C75276B193A00FAADA3 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		92E38C6F276AD39D00FAADA3 /* TrayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrayCollectionViewCell.swift; sourceTree = "<group>"; };
 		92E38C71276AE03300FAADA3 /* PhotoListObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListObject.swift; sourceTree = "<group>"; };
 		92E38C73276AE13400FAADA3 /* PHAsset+IAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHAsset+IAsset.swift"; sourceTree = "<group>"; };
+		92E38C75276B193A00FAADA3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AF00DE8E7F9ACB105EB54B67 /* Pods-FabBookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FabBookTests.release.xcconfig"; path = "Target Support Files/Pods-FabBookTests/Pods-FabBookTests.release.xcconfig"; sourceTree = "<group>"; };
 		B7FE902B8BC482C8B0AF4099 /* Pods_FabBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FabBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC6BE3E5ADABF11A8A1EF6EF /* Pods_FabBookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FabBookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,7 +204,6 @@
 		92423C202760568100A32C83 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				929726FB2761DFE5006B1E7E /* ProductGenerator.swift */,
 				92BA45C02762F9B400249E37 /* Utils */,
 				9250808D2767137600B89DF9 /* Extensions */,
 			);
@@ -245,6 +246,7 @@
 		92423C302760BE4A00A32C83 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				92E38C77276B19E900FAADA3 /* ProductGenrator */,
 				92423C402760D62800A32C83 /* Repositories */,
 				92423C3A2760BFC500A32C83 /* Network */,
 				92423C422760D6B300A32C83 /* PersistentStorages */,
@@ -345,6 +347,7 @@
 		9250808A2767070F00B89DF9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				92E38C78276B1A3400FAADA3 /* ProductGenerator */,
 				92BA45E1276343D400249E37 /* Policies */,
 				92BA45F127635CE500249E37 /* Design */,
 				9250808B276707FE00B89DF9 /* IAssets */,
@@ -366,7 +369,7 @@
 				92BA45E62763458200249E37 /* DeviceAssetsLibrary.swift */,
 				92BA45EF27634B9500249E37 /* DeviceAssetsGroupCategory.swift */,
 				92508095276714DF00B89DF9 /* PHAlbumData.swift */,
-				92E38C71276AE03300FAADA3 /* PhotoListObject.swift */,
+				92E38C73276AE13400FAADA3 /* PHAsset+IAsset.swift */,
 			);
 			path = DeviceAssets;
 			sourceTree = "<group>";
@@ -386,7 +389,6 @@
 				9250808F2767147700B89DF9 /* PHAssetCollection+Utility.swift */,
 				925080912767149800B89DF9 /* PHFetchResult+AssetsGroup.swift */,
 				92508093276714B900B89DF9 /* PHFetchOptions+Utility.swift */,
-				92E38C73276AE13400FAADA3 /* PHAsset+IAsset.swift */,
 			);
 			path = PHAsset;
 			sourceTree = "<group>";
@@ -439,6 +441,7 @@
 		92BA45C02762F9B400249E37 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				92E38C75276B193A00FAADA3 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -526,6 +529,22 @@
 				92D12244276052C0000F87F8 /* FabBookUITestsLaunchTests.swift */,
 			);
 			path = FabBookUITests;
+			sourceTree = "<group>";
+		};
+		92E38C77276B19E900FAADA3 /* ProductGenrator */ = {
+			isa = PBXGroup;
+			children = (
+				929726FB2761DFE5006B1E7E /* ProductGenerator.swift */,
+			);
+			path = ProductGenrator;
+			sourceTree = "<group>";
+		};
+		92E38C78276B1A3400FAADA3 /* ProductGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				92E38C71276AE03300FAADA3 /* PhotoListObject.swift */,
+			);
+			path = ProductGenerator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -772,6 +791,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92BA45E72763458200249E37 /* DeviceAssetsLibrary.swift in Sources */,
+				92E38C76276B193A00FAADA3 /* Constants.swift in Sources */,
 				92BA45D72763328B00249E37 /* AssetsTrayRepository.swift in Sources */,
 				92C5DFE42761965E00F0CF1F /* Design.swift in Sources */,
 				925080922767149800B89DF9 /* PHFetchResult+AssetsGroup.swift in Sources */,
