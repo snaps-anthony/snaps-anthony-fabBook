@@ -84,17 +84,17 @@ class AssetsTrayViewModel {
         
     }
     
-    func getIsEnableResolution(asset : PHAsset) -> Bool {
+    func getIsEnableResolution(asset : IAssetInterface) -> Bool {
         
         return true
     }
-    func getIsSelectedAssetCell(asset: PHAsset) -> Bool  {
+    func getIsSelectedAssetCell(asset: IAssetInterface) -> Bool  {
         let currentSelecteddAssets = ProductGenerator.shared.selectedAssets
         var ret = false
 
         for selectedAssetDic in currentSelecteddAssets {
-            let selectedAsset = selectedAssetDic["asset"] as! PHAsset
-            if selectedAsset.localIdentifier == asset.localIdentifier {
+            let selectedAsset = selectedAssetDic["asset"] as! IAssetInterface
+            if selectedAsset.assetID == asset.assetID {
                 ret = true
                 break
             }
@@ -125,7 +125,7 @@ class AssetsTrayViewModel {
     
         
         guard let fetchedAssets = try? fetchAssetReultSubject.value() else { return }
-        let cellAsset = fetchedAssets[cellindex.item]["asset"] as! PHAsset
+        let cellAsset = fetchedAssets[cellindex.item]["asset"] as! IAssetInterface
         
         // 체크설정인지 체크 해제인지 판별
         let isSelectedCell = getIsSelectedAssetCell(asset:cellAsset)
@@ -157,13 +157,13 @@ class AssetsTrayViewModel {
     // tray 사진 선택 처리
     func didTapTrayCollectionViewCell(cellindex : IndexPath) {
         let cellInfo = ProductGenerator.shared.selectedAssets[cellindex.item]
-        let cellAsset = cellInfo["asset"] as! PHAsset
+        let cellAsset = cellInfo["asset"] as! IAssetInterface
         deselectAssetEvent( cellAsset: cellAsset)
         selectedAssetsSubject.on(.next( ProductGenerator.shared.selectedAssets))            // 선택된 사진리스트
         selectedAssetCountSubject.on(.next(ProductGenerator.shared.selectedAssets.count)) // 선택된 사진 갯수
     }
     
-    func selectAssetEvent( cellindex: IndexPath, cellAsset :PHAsset) {
+    func selectAssetEvent( cellindex: IndexPath, cellAsset :IAssetInterface) {
         //TODO: _generator.policy.assetsListType() 에 따른 로직 분기처리
         
         let copyAsset = cellAsset
@@ -181,26 +181,28 @@ class AssetsTrayViewModel {
 //        lastUpdatedTrayCollectionvCellIndexSubject.on(.next(lastIndex))
     }
     
-    func deselectAssetEvent(cellAsset : PHAsset)  {
+    func deselectAssetEvent(cellAsset : IAssetInterface)  {
         //TODO: _generator.policy.assetsListType() 에 따른 로직 분기처리
+        
+        // 선택된 asset을 ProductGenerator.shared.selectedAssets에서 제거
         var idxInselectedAssets = 0
         let currentSelecteddAssets = ProductGenerator.shared.selectedAssets
 
         for selectedAssetDic in currentSelecteddAssets {
-            let selectedAsset = selectedAssetDic["asset"] as! PHAsset
-            if selectedAsset.localIdentifier == cellAsset.localIdentifier {
+            let selectedIAsset = selectedAssetDic["asset"] as! IAssetInterface
+            if selectedIAsset.assetID == cellAsset.assetID {
                 break
             }
             idxInselectedAssets += 1
         }
         ProductGenerator.shared.selectedAssets.remove(at: idxInselectedAssets)
         
-        
+        // 선택된 asset을 view에서 unchecked 처리
         var idxInFetchedAssets = 0
         guard let fetchedAssets = try? fetchAssetReultSubject.value() else { return }
         for fetchedAsset in fetchedAssets {
-            let fetchedAssetData = fetchedAsset["asset"] as! PHAsset
-            if fetchedAssetData.localIdentifier == cellAsset.localIdentifier {
+            let fetchedIAssetData = fetchedAsset["asset"] as! IAssetInterface
+            if fetchedIAssetData.assetID == cellAsset.assetID {
                 break
             }
             idxInFetchedAssets += 1
