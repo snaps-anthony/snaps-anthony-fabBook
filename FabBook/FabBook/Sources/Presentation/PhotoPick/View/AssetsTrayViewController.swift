@@ -106,7 +106,7 @@ class AssetsTrayViewController: BaseViewController {
             ).disposed(by: self.disposeBag)
         
         // 선택된 사진 갯수
-        viewModel.selectedAssetCountSubject
+        viewModel.selectedAssetsCountSubject
             .subscribe(
                 onNext: { [weak self] count in
                     self?.rightSaveBarBtn.title = "(\(count)/30) 담기"
@@ -167,12 +167,11 @@ class AssetsTrayViewController: BaseViewController {
         // trayCollcetionView data binding
         viewModel.selectedAssetsSubject
             .bind(to: trayCollectionView.rx.items(cellIdentifier: TrayCollectionViewCell.identifier, cellType: TrayCollectionViewCell.self)) { index, item, cell in
-                let asset = item["asset"] as! IAssetInterface
-                cell.onData(asset)
+                cell.onData(item)
             }.disposed(by: self.disposeBag)
         
         // trayCollcetionView select
-        Observable.zip( trayCollectionView.rx.itemSelected, trayCollectionView.rx.modelSelected([String:Any].self))
+        Observable.zip( trayCollectionView.rx.itemSelected, trayCollectionView.rx.modelSelected(PhotoListObject.self))
 //            .throttle(.milliseconds(300), latest: false, scheduler: MainScheduler.instance)
             .bind{ [weak self] indexPath, model in
                 self?.viewModel.didTapTrayCollectionViewCell(cellindex: indexPath)
