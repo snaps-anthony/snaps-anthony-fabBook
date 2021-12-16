@@ -134,7 +134,7 @@ class AssetsTrayViewController: BaseViewController {
         viewModel.fetchAssetReultSubject
             .bind(to: assetsCollectionView.rx.items(cellIdentifier: AssetCollectionViewCell.identifier, cellType: AssetCollectionViewCell.self)) { [unowned self] indexPath, item, cell in
 
-                let asset = item["asset"] as! PHAsset
+                let asset = item["asset"] as! IAssetInterface
                 let checkSelect = viewModel.getIsSelectedAssetCell(asset: asset)
                 let isEnableResolution = item["isEnable"] as! Bool // let isEnableResolution = viewModel.getIsEnableAssetCell(asset: asset)
                 
@@ -168,7 +168,8 @@ class AssetsTrayViewController: BaseViewController {
         // trayCollcetionView data binding
         viewModel.selectedAssetsSubject
             .bind(to: trayCollectionView.rx.items(cellIdentifier: TrayCollectionViewCell.identifier, cellType: TrayCollectionViewCell.self)) { index, item, cell in
-                let asset = item["asset"] as! PHAsset
+//                let asset = item["asset"] as! PHAsset
+                let asset = item["asset"] as! IAssetInterface
                 cell.onData(asset)
             }.disposed(by: self.disposeBag)
         

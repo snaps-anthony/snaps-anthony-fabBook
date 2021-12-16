@@ -36,7 +36,7 @@ class TrayCollectionViewCell : UICollectionViewCell {
     }
     
     //MARK: methods
-    func onData(_ asset: PHAsset) {
+    func onData(_ asset: IAssetInterface) {
         self.containerView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         self.imageView = self.viewWithTag(15) as? UIImageView ?? nil
         if self.imageView == nil {
@@ -48,7 +48,9 @@ class TrayCollectionViewCell : UICollectionViewCell {
             self.containerView.layer.masksToBounds = true
         }
         self.prepareForReuse()
-        self.getAssetThumbnail(asset: asset)
+        if let phasset = asset as? PHAsset {
+            self.getAssetThumbnail(asset: phasset)
+        }
     }
     
     func getAssetThumbnail(asset: PHAsset) {

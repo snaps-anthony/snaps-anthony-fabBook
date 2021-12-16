@@ -74,7 +74,7 @@ class AssetCollectionViewCell : UICollectionViewCell {
 //        infoDic["isEnable"] = self._isEnable!
 //        return infoDic
 //    }
-    func onData(asset : PHAsset){
+    func onData(asset : IAssetInterface){
         self.imageView = self.viewWithTag(15) as? UIImageView ?? nil
         if self.imageView == nil {
             self.imageView = UIImageView(frame: self.bounds)
@@ -86,7 +86,10 @@ class AssetCollectionViewCell : UICollectionViewCell {
         }
         self.bringSubviewToFront(self.btnCheckSelect)
         self.prepareForReuse()
-        self.getAssetThumbnail(asset: asset )
+        
+        if let phasset = asset as? PHAsset {
+            self.getAssetThumbnail(asset: phasset )
+        }
     }
     
     func getAssetThumbnail(asset: PHAsset) {
