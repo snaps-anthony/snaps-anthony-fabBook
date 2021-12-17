@@ -13,7 +13,7 @@ class ProductGenerator {
     //MARK: properties
     static let shared = ProductGenerator()
     private init() {}
-    var policy : PolicyInterface?
+    var policy : PolicyInterface!
     var templateCode : String?
     var productCode : String?
     var glossytype : String?

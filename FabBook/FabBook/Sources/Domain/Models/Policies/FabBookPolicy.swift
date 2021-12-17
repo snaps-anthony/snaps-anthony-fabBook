@@ -10,10 +10,12 @@ import Foundation
 final class FabBookPolicy : PolicyInterface {
     
     
-    let limitPhotos = 30
+    var numberOfLimitAssets = 30
+    
+    var assetListType : kAssetsListType = kAssetsListType.kAssetsListTypeUnknown
     
     func checkAddAssetPolicy(selectPhotoCount : Int) -> Bool {
-        if selectPhotoCount <= limitPhotos {
+        if selectPhotoCount <= numberOfLimitAssets {
             return true
         }
         else{

@@ -113,6 +113,7 @@ class DesignListViewController: BaseViewController {
                 
                 // ProductGenerator setting
                 let policy = FabBookPolicy()
+                policy.assetListType = .kAssetsListTypeSelect
                 ProductGenerator.shared.policy = policy
                 ProductGenerator.shared.templateCode = model.templateCode
                 ProductGenerator.shared.category = DeviceAssetsGroupCategory() // 디바이스 사진 picker
