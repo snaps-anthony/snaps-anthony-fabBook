@@ -636,7 +636,8 @@ class AssetsTrayViewModel {
                 let SEGUE_ID_SHOW_INPUT_PHOTO_BOOK_TITLE = "SEGUE_ID_SHOW_INPUT_PHOTO_BOOK_TITLE"
                 route.onNext([
                     "routeType":"segue",
-                    "routeId":SEGUE_ID_SHOW_INPUT_PHOTO_BOOK_TITLE
+                    "routeId":SEGUE_ID_SHOW_INPUT_PHOTO_BOOK_TITLE,
+                    "animated":true
                 ])
             }
         }
