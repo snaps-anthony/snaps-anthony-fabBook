@@ -316,10 +316,10 @@
             </objects>
             <point key="canvasLocation" x="832" y="84"/>
         </scene>
-        <!--View Controller-->
+        <!--Photo Book Title View Controller-->
         <scene sceneID="RoE-cr-Z0M">
             <objects>
-                <viewController storyboardIdentifier="PhotoBookTitleViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JmV-Rx-H6U" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoBookTitleViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JmV-Rx-H6U" customClass="PhotoBookTitleViewController" customModule="FabBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xxx-PJ-9gs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -353,7 +353,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                                                 <connections>
-                                                    <outlet property="delegate" destination="JmV-Rx-H6U" id="S4E-nG-mjG"/>
+                                                    <action selector="textEdittingChange:" destination="JmV-Rx-H6U" eventType="editingChanged" id="OtF-Q6-Rye"/>
                                                 </connections>
                                             </textField>
                                         </subviews>
@@ -407,6 +407,9 @@
                                         <state key="normal" title="다음">
                                             <color key="titleColor" red="0.90955525640000001" green="0.91387325529999996" blue="0.90953296419999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="nextClicked:" destination="JmV-Rx-H6U" eventType="touchUpInside" id="13s-kc-P9Y"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="커버와 책 등에 들어가는 제목은 특수문자를 제외한 13자리까지 입력이 가능 합니다." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYI-tT-Gll" userLabel="description">
                                         <rect key="frame" x="24" y="188" width="374" height="13.5"/>
@@ -454,6 +457,21 @@
                     </view>
                     <navigationItem key="navigationItem" id="IHF-kd-oSa"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="backgroundView" destination="uQB-6V-hFG" id="Abb-ZA-ftc"/>
+                        <outlet property="bottomDot" destination="Xy9-4s-DhY" id="KD4-DL-ja8"/>
+                        <outlet property="iconImageView" destination="bxq-y0-tkW" id="r32-S6-oJ6"/>
+                        <outlet property="iconImageViewHeight" destination="Ww7-3y-fRK" id="FYa-eq-E67"/>
+                        <outlet property="lblDescription" destination="OYI-tT-Gll" id="xKh-un-InP"/>
+                        <outlet property="navigationBar" destination="rEO-0b-A04" id="BSh-Zx-SpB"/>
+                        <outlet property="nextButton" destination="OMp-E0-mM1" id="rCD-Os-fr5"/>
+                        <outlet property="separator" destination="Qqs-PD-o0U" id="lOD-e4-uaa"/>
+                        <outlet property="separatorHeight" destination="F9v-lY-LIv" id="oLy-FA-k61"/>
+                        <outlet property="tfInputPhotoBookName" destination="ZIe-o2-x89" id="BR9-DN-NaG"/>
+                        <outlet property="threedot" destination="Fva-yP-N2h" id="Ug1-gD-skc"/>
+                        <outlet property="topViewHeight" destination="e3B-E6-fcp" id="SMe-9F-kuF"/>
+                        <outlet property="upDot" destination="I09-jZ-dvW" id="dkl-NH-yuo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n0R-V1-4oo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

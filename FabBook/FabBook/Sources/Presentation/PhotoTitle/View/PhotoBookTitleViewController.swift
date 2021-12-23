@@ -9,21 +9,48 @@ import UIKit
 
 class PhotoBookTitleViewController: UIViewController {
 
+    
+    //MARK: UI
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var iconImageViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var lblDescription: UILabel!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var separator: UIView!
+    @IBOutlet weak var separatorHeight: NSLayoutConstraint!
+    @IBOutlet weak var tfInputPhotoBookName: UITextField! {
+        didSet {
+            tfInputPhotoBookName.delegate = self
+            print("debug : tfInputPhotoBookName.delegate = self 1")
+        }
+    }
+    
+    @IBOutlet weak var topViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var upDot: UIView!
+    @IBOutlet weak var bottomDot: UIView!
+    @IBOutlet weak var threedot: UIView!
+    
+    
+    
+    //MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        print("debug : tfInputPhotoBookName.delegate = self 2")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func nextClicked(_ sender: Any) {
+        
     }
-    */
+    
+    @IBAction func textEdittingChange(_ sender: Any) {
+        print("debyg : textEdittingChange -> \(tfInputPhotoBookName.text)")
+    }
+    
+}
 
+extension PhotoBookTitleViewController : UITextFieldDelegate {
+    
 }
