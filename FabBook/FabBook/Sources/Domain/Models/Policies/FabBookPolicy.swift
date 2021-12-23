@@ -9,7 +9,6 @@ import Foundation
 
 final class FabBookPolicy : PolicyInterface {
     
-    
     var numberOfLimitAssets = 30
     
     var assetListType : kAssetsListType = kAssetsListType.kAssetsListTypeUnknown
@@ -23,4 +22,7 @@ final class FabBookPolicy : PolicyInterface {
         }
     }
     
+    func checkConfirmPolicy() -> Bool {
+        return true
+    }
 }

@@ -20,5 +20,7 @@ protocol PolicyInterface {
     var numberOfLimitAssets : Int {get set}
     var assetListType : kAssetsListType { get set}
     
-    func checkAddAssetPolicy(selectPhotoCount : Int) -> Bool 
+    func checkAddAssetPolicy(selectPhotoCount : Int) -> Bool
+    
+    func checkConfirmPolicy() -> Bool
 }

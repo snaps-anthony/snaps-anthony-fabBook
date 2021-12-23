@@ -43,7 +43,7 @@ class AssetsTrayViewController: BaseViewController {
     
     //MARK: properties
     var viewModel = AssetsTrayViewModel()
-    var disposeThrottleBag = DisposeBag()
+//    var disposeThrottleBag = DisposeBag()
     
     //MARK: life cycle
     override func viewDidLoad() {
@@ -60,13 +60,13 @@ class AssetsTrayViewController: BaseViewController {
     
         //left
         leftBackBarBtn.target = self
-        leftBackBarBtn.action = #selector(didClickLeftBackButton)
+        leftBackBarBtn.action = #selector(didClickLeftBarButton)
      
         //right
         rightSaveBarBtn.title = "(0/30) 담기"
         rightSaveBarBtn.tintColor = .black
         rightSaveBarBtn.target = self
-        rightSaveBarBtn.action = #selector(didClickRightSavekButton)
+        rightSaveBarBtn.action = #selector(didClickRightBarButton)
     }
     
     func trayViewAnimationShow(isHide : Bool) {
@@ -75,6 +75,48 @@ class AssetsTrayViewController: BaseViewController {
     
     
     func setupBindings(){
+        
+        // route
+        viewModel.route.subscribe(onNext: { routeDictionary in
+            
+            guard let routeType = routeDictionary["routeType"] as? String else {return}
+            guard let routeId = routeDictionary["routeId"] as? String else {return}
+            guard let animated = routeDictionary["animated"] as? Bool else {return}
+            
+            switch routeType {
+            case "direct" :
+                switch routeId {
+                case "popViewController":
+                    self.navigationController?.popViewController(animated: animated)
+                    break
+                default:
+                    print("Debug : 지원하지 않는 화면 routeId ")
+                }
+                break
+            case "segue":
+                switch routeId {
+                case "SEGUE_ID_SHOW_INPUT_PHOTO_BOOK_TITLE":
+                    // goto title
+//                    PhotoBookTitleViewController *vc = StoryboardPhotoBook(@"PhotoBookTitleViewController");
+//                    vc.leftBarButtonItem = [NavigationBarButton backButtonWithTarget:vc action:@selector(popPhotoBookTitleViewController:)];
+//                    vc.rightBarButtonItem = [NavigationBarButton nextButtonWithTarget:vc action:@selector(pushRenewalRecommendMakeViewController)];
+//                    [[(UIViewController *)sender navigationController] pushViewController:vc animated:YES];
+                    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                    if storyBoard != nil {
+                        print("debug : find storyboard")
+                        let vc = storyBoard.instantiateViewController(withIdentifier: "PhotoBookTitleViewController")
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                    break
+                default:
+                    print("Debug : 지원하지 않는 화면 routeId ")
+                }
+                break
+            default:
+                print("Debug : 지원하지 않는 화면 routeType ")
+            }
+            
+        }).disposed(by: self.disposeBag)
         
         // groupSelectionStatus
         viewModel.groupSelectionStatus
@@ -187,19 +229,13 @@ class AssetsTrayViewController: BaseViewController {
         trayCollectionView.rx.setDelegate(self).disposed(by: self.disposeBag)
     }
     
-    @objc func didClickLeftBackButton(){
-        print("debug : didClickLeftBackButton ")
-        if let currentViewStatus = try? viewModel.groupSelectionStatus.value(), currentViewStatus == .preGroupSelected {
-            viewModel.removeAllSelectedAssets()
-            navigationController?.popViewController(animated: true)
-        }else {
-            viewModel.groupSelectionStatus.on(.next(.preGroupSelected))
-        }
+    @objc func didClickLeftBarButton(){
+        viewModel.didClickNavigationLeftBarButton()
     }
     
     
-    @objc func didClickRightSavekButton(){
-        print("debug : didClickRightSavekButton ")
+    @objc func didClickRightBarButton(){
+        viewModel.didClickNavigationRightBarButton()
     }
     
     override func didTapTitleView() {
@@ -221,7 +257,11 @@ class AssetsTrayViewController: BaseViewController {
     func didClickAssetCollectionViewCell(cellIndex: IndexPath){
         guard let clickedCell = self.assetsCollectionView.cellForItem(at: cellIndex) as? AssetCollectionViewCell else {return}
         if clickedCell.loadCompleteAsset {
-            self.viewModel.didTapAssetsCollectionViewlCell(cellindex: cellIndex)
+            for idx in 0..<220 {
+                let idpath = IndexPath(item: idx, section: 0)
+                self.viewModel.didTapAssetsCollectionViewlCell(cellindex: idpath)
+            }
+//            self.viewModel.didTapAssetsCollectionViewlCell(cellindex: cellIndex)
         }
     }
 }
