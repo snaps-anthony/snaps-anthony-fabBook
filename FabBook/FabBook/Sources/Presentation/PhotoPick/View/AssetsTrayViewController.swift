@@ -257,11 +257,12 @@ class AssetsTrayViewController: BaseViewController {
     func didClickAssetCollectionViewCell(cellIndex: IndexPath){
         guard let clickedCell = self.assetsCollectionView.cellForItem(at: cellIndex) as? AssetCollectionViewCell else {return}
         if clickedCell.loadCompleteAsset {
-            for idx in 0..<220 {
+            //            self.viewModel.didTapAssetsCollectionViewlCell(cellindex: cellIndex)
+            
+            for idx in 0..<70 {
                 let idpath = IndexPath(item: idx, section: 0)
                 self.viewModel.didTapAssetsCollectionViewlCell(cellindex: idpath)
             }
-//            self.viewModel.didTapAssetsCollectionViewlCell(cellindex: cellIndex)
         }
     }
 }

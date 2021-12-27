@@ -34,4 +34,12 @@ class HttpManager {
         return
     }
     
+    
+    func restSendGetProjCode(completion : @escaping(Bool, [String:Any]? ) -> Void) {
+        // TODO: HTTPManager restSendGetProjCodeWithCompleteBlock
+        
+  
+        
+        completion(true, ["projectCode":"20211208014926"])
+    }
 }

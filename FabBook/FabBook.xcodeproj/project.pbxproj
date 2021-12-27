@@ -64,6 +64,9 @@
 		92EDDA1127794D060018A83B /* PhotoBookMakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDDA1027794D060018A83B /* PhotoBookMakeViewController.swift */; };
 		92EDDA1327794D150018A83B /* PhotoBookMakeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDDA1227794D150018A83B /* PhotoBookMakeViewModel.swift */; };
 		92EDDA1527795CEF0018A83B /* RenewalRecommendMakingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92EDDA1427795CEE0018A83B /* RenewalRecommendMakingViewController.xib */; };
+		92EDDA17277980D50018A83B /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDDA16277980D50018A83B /* Source.swift */; };
+		92EDDA1927798A2A0018A83B /* ProjectCodeTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDDA1827798A2A0018A83B /* ProjectCodeTask.swift */; };
+		92EDDA1B2779A61D0018A83B /* ThumbnailUploadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDDA1A2779A61D0018A83B /* ThumbnailUploadTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +151,9 @@
 		92EDDA1027794D060018A83B /* PhotoBookMakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBookMakeViewController.swift; sourceTree = "<group>"; };
 		92EDDA1227794D150018A83B /* PhotoBookMakeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBookMakeViewModel.swift; sourceTree = "<group>"; };
 		92EDDA1427795CEE0018A83B /* RenewalRecommendMakingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RenewalRecommendMakingViewController.xib; sourceTree = "<group>"; };
+		92EDDA16277980D50018A83B /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
+		92EDDA1827798A2A0018A83B /* ProjectCodeTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCodeTask.swift; sourceTree = "<group>"; };
+		92EDDA1A2779A61D0018A83B /* ThumbnailUploadTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailUploadTask.swift; sourceTree = "<group>"; };
 		AF00DE8E7F9ACB105EB54B67 /* Pods-FabBookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FabBookTests.release.xcconfig"; path = "Target Support Files/Pods-FabBookTests/Pods-FabBookTests.release.xcconfig"; sourceTree = "<group>"; };
 		B7FE902B8BC482C8B0AF4099 /* Pods_FabBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FabBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC6BE3E5ADABF11A8A1EF6EF /* Pods_FabBookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FabBookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +266,7 @@
 		92423C302760BE4A00A32C83 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				92EDDA1C2779AFF80018A83B /* UploadTask */,
 				92E38C77276B19E900FAADA3 /* ProductGenerator */,
 				92423C402760D62800A32C83 /* Repositories */,
 				92423C3A2760BFC500A32C83 /* Network */,
@@ -595,6 +602,7 @@
 			isa = PBXGroup;
 			children = (
 				92E38C71276AE03300FAADA3 /* PhotoListObject.swift */,
+				92EDDA16277980D50018A83B /* Source.swift */,
 			);
 			path = ProductGenerate;
 			sourceTree = "<group>";
@@ -614,6 +622,15 @@
 				92EDDA1027794D060018A83B /* PhotoBookMakeViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		92EDDA1C2779AFF80018A83B /* UploadTask */ = {
+			isa = PBXGroup;
+			children = (
+				92EDDA1827798A2A0018A83B /* ProjectCodeTask.swift */,
+				92EDDA1A2779A61D0018A83B /* ThumbnailUploadTask.swift */,
+			);
+			path = UploadTask;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -880,10 +897,13 @@
 				92C5DFE62761972300F0CF1F /* DesignListRepositoryInterface.swift in Sources */,
 				92D12222276052BF000F87F8 /* AppDelegate.swift in Sources */,
 				92BA45EA27634AAC00249E37 /* IAssetsLibraryInterface.swift in Sources */,
+				92EDDA1B2779A61D0018A83B /* ThumbnailUploadTask.swift in Sources */,
 				925080872766EEBD00B89DF9 /* IAssetInterface.swift in Sources */,
 				92E38C74276AE13400FAADA3 /* PHAsset+IAsset.swift in Sources */,
 				929726FA2761DFCE006B1E7E /* FabBookPolicy.swift in Sources */,
+				92EDDA17277980D50018A83B /* Source.swift in Sources */,
 				92E38C7C276C93E100FAADA3 /* Utility.swift in Sources */,
+				92EDDA1927798A2A0018A83B /* ProjectCodeTask.swift in Sources */,
 				92E38C6E27698B9D00FAADA3 /* UIButton.swift in Sources */,
 				92508094276714B900B89DF9 /* PHFetchOptions+Utility.swift in Sources */,
 				929726FC2761DFE5006B1E7E /* ProductGenerator.swift in Sources */,

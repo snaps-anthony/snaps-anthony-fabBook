@@ -12,6 +12,7 @@ class PhotoBookTitleViewController: UIViewController {
     //MARK: properties
     let MAX_LENGTH_TITLE = 25
     var _oldString = ""
+    
     //MARK: UI
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var leftBackBarBtn: UIBarButtonItem!
@@ -48,12 +49,12 @@ class PhotoBookTitleViewController: UIViewController {
         print("debug : viewDidAppear")
 //        _tfInputPhotoBookName.text = _oldString = [ProductGenerator sharedGenerator].projectName;
 //        [_tfInputPhotoBookName becomeFirstResponder];
-        _oldString = ProductGenerator.shared.projectNme
+        _oldString = ProductGenerator.shared.projectName
         tfInputPhotoBookName.text = _oldString
         
         
         print("debug : _oldString -> \(_oldString)")
-        print("debug : ProductGenerator.shared.projectNme -> \(ProductGenerator.shared.projectNme)")
+        print("debug : ProductGenerator.shared.projectNme -> \(ProductGenerator.shared.projectName)")
     }
     
     //MARK: methods
@@ -74,7 +75,7 @@ class PhotoBookTitleViewController: UIViewController {
     }
     
     private func pushPhotoBookMakeViewController() {
-        ProductGenerator.shared.projectNme = tfInputPhotoBookName.text ?? ""
+        ProductGenerator.shared.projectName = tfInputPhotoBookName.text ?? ""
         
 //        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
 //        if storyBoard != nil {
