@@ -99,6 +99,10 @@ class PhotoBookMakeViewModel {
             _thumbUploadTask?.performTask(isSaveCart: false)
         }
     }
+    
+    func requestAutoLayoutTemplete(){
+        // HttpManager.default()?.getProductTemplateInfo({ (successed, response) in })
+    }
 }
 
 //MARK: ProjectCodeTaskDelegate
@@ -142,6 +146,47 @@ extension PhotoBookMakeViewModel : ProjectCodeTaskDelegate {
 
 //MARK: ThumbnailUploadProgressDelegate
 extension PhotoBookMakeViewModel : ThumbnailUploadProgressDelegate {
+    func progressLoadComplete(source: Source) {
+        //
+        print("debug : progressLoadComplete")
+    }
+    
+    func progressLoadAllComplete() {
+        //
+        print("debug : progressLoadAllComplete")
+    }
+    
+    func progressUploadBegin(source: Source, imageName: String, orientation: UIImage.Orientation) {
+        //
+        print("debug : progressUploadBegin")
+    }
+    
+    func progressUploadFail(source: Source) {
+        //
+        print("debug : progressUploadFail")
+    }
+    
+    func progressUploadComplete(source: Source) {
+        print("debug : progressUploadComplete")
+    }
+    
+    func progressUploadComplete(totalCount: Float, completeCount: Float) {
+        print("debug : progressUploadComplete totalCount -> \(totalCount)")
+    }
+    
+    func progressUploadAllComplete(isSucess: Bool) {
+        print("debug : progressUploadAllComplete  isSucess -> \(isSucess)")
+        if isSucess {
+            // 썸네일 업로드 모두 성공
+            self.requestAutoLayoutTemplete()
+        }
+        else{
+            // 실패
+            ProductGenerator.shared.projectName = ""
+            print("Debug : progressUploadAllComplete fail ")
+        }
+    }
+    
     
 }
 
