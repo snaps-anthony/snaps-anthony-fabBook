@@ -61,6 +61,9 @@
 		92E38C76276B193A00FAADA3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E38C75276B193A00FAADA3 /* Constants.swift */; };
 		92E38C7A276B341200FAADA3 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E38C79276B341200FAADA3 /* Date.swift */; };
 		92E38C7C276C93E100FAADA3 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E38C7B276C93E100FAADA3 /* Utility.swift */; };
+		92EDDA1127794D060018A83B /* PhotoBookMakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDDA1027794D060018A83B /* PhotoBookMakeViewController.swift */; };
+		92EDDA1327794D150018A83B /* PhotoBookMakeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDDA1227794D150018A83B /* PhotoBookMakeViewModel.swift */; };
+		92EDDA1527795CEF0018A83B /* RenewalRecommendMakingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92EDDA1427795CEE0018A83B /* RenewalRecommendMakingViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +145,9 @@
 		92E38C75276B193A00FAADA3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		92E38C79276B341200FAADA3 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		92E38C7B276C93E100FAADA3 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		92EDDA1027794D060018A83B /* PhotoBookMakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBookMakeViewController.swift; sourceTree = "<group>"; };
+		92EDDA1227794D150018A83B /* PhotoBookMakeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBookMakeViewModel.swift; sourceTree = "<group>"; };
+		92EDDA1427795CEE0018A83B /* RenewalRecommendMakingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RenewalRecommendMakingViewController.xib; sourceTree = "<group>"; };
 		AF00DE8E7F9ACB105EB54B67 /* Pods-FabBookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FabBookTests.release.xcconfig"; path = "Target Support Files/Pods-FabBookTests/Pods-FabBookTests.release.xcconfig"; sourceTree = "<group>"; };
 		B7FE902B8BC482C8B0AF4099 /* Pods_FabBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FabBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC6BE3E5ADABF11A8A1EF6EF /* Pods_FabBookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FabBookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,6 +276,7 @@
 				92423C332760BEA100A32C83 /* DesignList */,
 				929726F52761DB6D006B1E7E /* PhotoPick */,
 				926CE7A8277439C800C4A2C3 /* PhotoTitle */,
+				926CE7B22775BCFF00C4A2C3 /* PhotoBookMake */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -428,6 +435,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		926CE7B22775BCFF00C4A2C3 /* PhotoBookMake */ = {
+			isa = PBXGroup;
+			children = (
+				92EDDA0F27794CF00018A83B /* View */,
+				92EDDA0E27794CE90018A83B /* ViewModel */,
+			);
+			path = PhotoBookMake;
+			sourceTree = "<group>";
+		};
 		929726F52761DB6D006B1E7E /* PhotoPick */ = {
 			isa = PBXGroup;
 			children = (
@@ -583,6 +599,23 @@
 			path = ProductGenerate;
 			sourceTree = "<group>";
 		};
+		92EDDA0E27794CE90018A83B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				92EDDA1227794D150018A83B /* PhotoBookMakeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		92EDDA0F27794CF00018A83B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				92EDDA1427795CEE0018A83B /* RenewalRecommendMakingViewController.xib */,
+				92EDDA1027794D060018A83B /* PhotoBookMakeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -696,6 +729,7 @@
 				92D1222B276052C0000F87F8 /* Assets.xcassets in Resources */,
 				92423C2E2760A2B500A32C83 /* productInfo.json in Resources */,
 				92423C2C2760A21B00A32C83 /* save.json in Resources */,
+				92EDDA1527795CEF0018A83B /* RenewalRecommendMakingViewController.xib in Resources */,
 				92D12229276052BF000F87F8 /* Main.storyboard in Resources */,
 				92423C2627609F5700A32C83 /* design.json in Resources */,
 				92423C2A2760A1FA00A32C83 /* projectInfo.json in Resources */,
@@ -834,6 +868,7 @@
 				925080922767149800B89DF9 /* PHFetchResult+AssetsGroup.swift in Sources */,
 				92C5DFE82761973600F0CF1F /* DesignListRepository.swift in Sources */,
 				92BA45DF2763422100249E37 /* DeviceAssetLoader.swift in Sources */,
+				92EDDA1127794D060018A83B /* PhotoBookMakeViewController.swift in Sources */,
 				925080902767147700B89DF9 /* PHAssetCollection+Utility.swift in Sources */,
 				92423C392760BF3D00A32C83 /* DesignListViewModel.swift in Sources */,
 				926CE7AF27743A2700C4A2C3 /* PhotoBookTitleViewModel.swift in Sources */,
@@ -867,6 +902,7 @@
 				92508096276714DF00B89DF9 /* PHAlbumData.swift in Sources */,
 				92BA45F027634B9500249E37 /* DeviceAssetsGroupCategory.swift in Sources */,
 				92E38C7A276B341200FAADA3 /* Date.swift in Sources */,
+				92EDDA1327794D150018A83B /* PhotoBookMakeViewModel.swift in Sources */,
 				925080892766F3A500B89DF9 /* IAssetsGroupInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -328,7 +328,12 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <navigationItem title="Title" id="HFY-fW-9tl"/>
+                                    <navigationItem title="제목 입력" id="HFY-fW-9tl">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="before" id="CvX-2I-OQU">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="g8a-BT-GAn"/>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQB-6V-hFG">
@@ -463,8 +468,10 @@
                         <outlet property="iconImageView" destination="bxq-y0-tkW" id="r32-S6-oJ6"/>
                         <outlet property="iconImageViewHeight" destination="Ww7-3y-fRK" id="FYa-eq-E67"/>
                         <outlet property="lblDescription" destination="OYI-tT-Gll" id="xKh-un-InP"/>
+                        <outlet property="leftBackBarBtn" destination="CvX-2I-OQU" id="S43-IS-KY7"/>
                         <outlet property="navigationBar" destination="rEO-0b-A04" id="BSh-Zx-SpB"/>
                         <outlet property="nextButton" destination="OMp-E0-mM1" id="rCD-Os-fr5"/>
+                        <outlet property="rightSaveBarBtn" destination="g8a-BT-GAn" id="bYR-dM-391"/>
                         <outlet property="separator" destination="Qqs-PD-o0U" id="lOD-e4-uaa"/>
                         <outlet property="separatorHeight" destination="F9v-lY-LIv" id="oLy-FA-k61"/>
                         <outlet property="tfInputPhotoBookName" destination="ZIe-o2-x89" id="BR9-DN-NaG"/>
